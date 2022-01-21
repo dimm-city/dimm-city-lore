@@ -3,12 +3,20 @@ import MainLayout from "../layouts/MainLayout.astro";
 ---
 <MainLayout title="Lore">
 <style>
-#ui-bar {
-	display: none;
-}
-#story{
-	margin-left: auto;
+iframe{
+	border: 0;
+	width: 90%;
+	margin: 0.33em;
 }
 </style>
-<iframe src="/stories/prologue.html" style="width: 100%" />
+<iframe src="/stories/prologue/index.html" style="width: 100%" onload="injectStyles()" client:load />
+<script>
+ function injectStyles() {
+ 	let link = document.createElement("link");
+	link.href = "/assets/stories.css";      /**** your CSS file ****/ 
+	link.rel = "stylesheet"; 
+	link.type = "text/css"; 
+	frames[0].document.head.appendChild(link);
+ };
+</script>
 </MainLayout>
