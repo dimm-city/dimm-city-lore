@@ -1,0 +1,91 @@
+---
+let title = Astro.props.title;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{title}</title>
+
+	<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/augmented-ui@2/augmented-ui.min.css">
+	<style global>		
+		@import "../styles/main.css";
+	</style>
+  
+</head>
+<body>
+
+<div class="vertical-acordion">
+  <div class="top-panel">
+    <div class="video-wrapper">
+    <div class="story-container"
+        data-augmented-ui="bl-clip-inset br-clip-inset tl-2-clip-xy tr-2-clip-xy l-rect r-rect t-clip"
+      >
+      <div class="video-decoration-glow">
+        <div aria-hidden="true" class="augmented-video-decoration"
+          data-augmented-ui="bl-clip-inset br-clip-inset tl-2-clip-xy tr-2-clip-xy l-rect r-rect t-clip"
+        ></div>
+      </div>
+     <slot />
+    </div>
+      <!-- <video controls="" autoplay="" name="media" loop=""
+        data-augmented-ui="bl-clip-inset br-clip-inset tl-2-clip-xy tr-2-clip-xy l-rect r-rect t-clip"
+      >
+        <source src="https://i.imgur.com/3JU9H2Y.mp4" type="video/mp4" />
+      </video>
+      <div class="video-decoration-glow">
+        <div aria-hidden="true" class="augmented-video-decoration"
+          data-augmented-ui="bl-clip-inset br-clip-inset tl-2-clip-xy tr-2-clip-xy l-rect r-rect t-clip"
+        ></div>
+      </div>
+      <p class="video-text-overlay">
+          Here are some bullet points about the design
+        * 2 panel accordion
+        *  each taking most of the viewport when it is shown
+        * first panel is a video player with text overlay
+        * second panel is a 2 column panel
+        * the collapsed panel will only contain a toolbar with a few buttons
+      </p> -->
+    </div>
+  </div>
+  <div class="accordion-divider">
+    <div class="acordion-divider-decoration"
+      aria-hidden="true"
+      data-augmented-ui="tl-clip l-clip t-clip-x b-clip-x tr-clip r-clip bl-clip br-clip"
+    ></div>
+    <button onclick="this.closest('.vertical-acordion').classList.toggle('bottom')"
+      data-augmented-ui="all-triangle-up border"
+    ></button>
+  </div>
+  <div class="bottom-panel">
+    <h1 class="stories-header" data-augmented-ui="tl-clip l-clip">Stories</h1>
+    <div class="stories-panel" data-augmented-ui="tl-2-clip-x">
+      <div class="search-bar">
+        <input type="text" placeholder="search" name="search">
+        <button>Show All</button>
+      </div>
+      <ul class="story-items" data-augmented-ui-reset>
+        <li data-augmented-ui>Intro</li>
+        <li data-augmented-ui>Power Failure</li>
+        <li data-augmented-ui>Moist Palms</li>
+      </ul>
+    </div>
+    <h1 class="characters-header" data-augmented-ui="tr-clip r-clip">Characters</h1>
+    <div class="characters-panel" data-augmented-ui="tr-2-clip-x">
+      <ul class="characters-list" data-augmented-ui-reset>
+        <li data-augmented-ui></li>
+        <li data-augmented-ui></li>
+        <li data-augmented-ui></li>
+        <li data-augmented-ui></li>
+        <li data-augmented-ui></li>
+      </ul>
+    </div>
+  </div>
+</div>
+    
+</body>
+</html>
