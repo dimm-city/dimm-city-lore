@@ -1,7 +1,8 @@
 :root {
-    --bs-body-font-family: "Droid Sans Mono", "Comfortaa", cursive, Nunito, -apple-system, BlinkMacSystemFont, Segoe UI,
+    --main-font-family: "Droid Sans Mono", "Comfortaa", cursive, Nunito, -apple-system, BlinkMacSystemFont, Segoe UI,
         Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
 
+    --bs-body-font-family: var(--main-font-family);
     --bg-main: #01242f;
     --bg-secondary: #190030;
 

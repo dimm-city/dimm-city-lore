@@ -9,18 +9,21 @@ iframe{
 	margin: 0.33em;
 }
 </style>
-<iframe id="story" src="/stories/prologue/index.html" style="width: 100%" onload="injectStyles()" client:load />
+<iframe id="story" src="/stories/prologue/Prologue.html" style="width: 100%" onload="injectStyles()" client:load />
 <script>
-	let story = document.getElementById('story');
-function exit() {
-	console.log('exiting..');
-}
+ let story = document.getElementById('story');
  function injectStyles() {
- 	let link = document.createElement("link");
-	link.href = "/stories/dimm-city.css";      /**** your CSS file ****/ 
+	let link = document.createElement("link");
+	link.href = "/assets/variables.css"; 
 	link.rel = "stylesheet"; 
 	link.type = "text/css"; 
 	frames[0].document.head.appendChild(link);
+
+ 	let dc = document.createElement("link");
+	dc.href = "/stories/dimm-city.css"; 
+	dc.rel = "stylesheet"; 
+	dc.type = "text/css"; 
+	frames[0].document.head.appendChild(dc);
  };
 </script>
 </MainLayout>

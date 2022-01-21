@@ -1,28 +1,46 @@
 body {
-	background-size: cover; 
-	background-position: center center;
-	background-repeat: no-repeat; 
-	background-attachment: fixed
-  }
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: var(--third-accent);
+    font-family: var(--main-font-family);
+}
 
 #ui-bar {
-	display: none;
+    display: none;
 }
-#story{
-	margin-left: auto;
+#story {
+    margin-left: auto;
+}
+#passages {
+    margin: 2em;
+    max-width: unset;
 }
 a {
     color: pink;
 }
 
 .background {
-	width: 100vw;
-	height: 100vh;
-	object-fit: cover;
-	position: fixed;
-	left: 0;
-	right: 0;
-	top: 0;
-	bottom: 0;
-	z-index: -1;
-  }
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.action-toolbar {
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.action-toolbar a {
+    font-size: 1.1em;
+}
