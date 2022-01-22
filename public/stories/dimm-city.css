@@ -1,26 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html,
 body {
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: var(--third-accent);
+    font: unset;
+    /* color: white;  var(--third-accent); */
+    color: #fff;
     font-family: var(--main-font-family);
+    min-height: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
+/*SugarCube Overrides*/
 #ui-bar {
     display: none;
 }
 #story {
-    margin-left: auto;
+    margin: auto;
+    justify-content: center;
+    display: flex;
+    padding: 0;
 }
 #passages {
-    margin: 2em;
-    max-width: unset;
-}
-a {
-    color: pink;
+    border-radius: 3em;
+    background-color: rgba(255, 255, 255, 0.135);
+    margin: 3em;
+    text-shadow: black;
 }
 
+
+.passage {
+    padding: 1.5em;
+}
+.passage.no-text{
+    padding: 0;
+    background-color: transparent;
+}
+.passage br {
+    display: none;
+}
+/*End SugarCube Overrides*/
+
+a {
+    color: var(--third-accent);
+}
+
+a:hover,
+a:active {
+    text-decoration: none;
+    color: var(--primary-accent);
+}
 .background {
     width: 100vw;
     height: 100vh;
@@ -31,16 +63,27 @@ a {
     top: 0;
     bottom: 0;
     z-index: -1;
+    pointer-events: none;
 }
 
 .action-toolbar {
     overflow: hidden;
     position: fixed;
     bottom: 0;
+    left: 0;
     width: 100%;
     display: flex;
     justify-content: space-evenly;
+    padding-bottom: 1em;
 }
 .action-toolbar a {
     font-size: 1.1em;
+}
+.action-toolbar a::before {
+    content: "<";
+    padding-right: 0.25em;
+}
+.action-toolbar a::after {
+    content: ">";
+    padding-left: 0.25em;
 }

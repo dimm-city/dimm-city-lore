@@ -1,29 +1,7 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
+import Story from "../components/Story.astro";
 ---
 <MainLayout title="Lore">
-<style>
-iframe{
-	border: 0;
-	width: 90%;
-	margin: 0.33em;
-}
-</style>
-<iframe id="story" src="/stories/prologue/Prologue.html" style="width: 100%" onload="injectStyles()" client:load />
-<script>
- let story = document.getElementById('story');
- function injectStyles() {
-	let link = document.createElement("link");
-	link.href = "/assets/variables.css"; 
-	link.rel = "stylesheet"; 
-	link.type = "text/css"; 
-	frames[0].document.head.appendChild(link);
-
- 	let dc = document.createElement("link");
-	dc.href = "/stories/dimm-city.css"; 
-	dc.rel = "stylesheet"; 
-	dc.type = "text/css"; 
-	frames[0].document.head.appendChild(dc);
- };
-</script>
+	<Story src="/stories/prologue/Prologue.html" />
 </MainLayout>
