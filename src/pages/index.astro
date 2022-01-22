@@ -2,11 +2,23 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import Story from "../components/Story.astro";
 import StoriesPanel from "../components/StoriesPanel.astro";
+import CharactersPanel from "../components/CharactersPanel.astro";
 
 let selectedStory = Astro.props.selectedStory || "/stories/none.html";
 
 ---
 <MainLayout title="Lore">
+<script>
+	document.addEventListener("story.selected", (e) => {
+		console.log('s', e);
+		if(e.detail >"" && e.detail != "stories/none.html"){
+			document.querySelector('.vertical-acordion').classList.remove('bottom');
+		} else {
+			document.querySelector('.vertical-acordion').classList.add('bottom');
+		}
+	});
+
+</script>
 <div class="vertical-acordion bottom">
   <div class="top-panel">
     <div class="video-wrapper">
@@ -53,15 +65,7 @@ let selectedStory = Astro.props.selectedStory || "/stories/none.html";
     <h1 class="stories-header" data-augmented-ui="tl-clip l-clip">Stories</h1>
     <StoriesPanel />
     <h1 class="characters-header" data-augmented-ui="tr-clip r-clip">Characters</h1>
-    <div class="characters-panel" data-augmented-ui="tr-2-clip-x">
-      <ul class="characters-list" data-augmented-ui-reset>
-        <li data-augmented-ui></li>
-        <li data-augmented-ui></li>
-        <li data-augmented-ui></li>
-        <li data-augmented-ui></li>
-        <li data-augmented-ui></li>
-      </ul>
-    </div>
+    <CharactersPanel />
   </div>
 </div>
 </MainLayout>

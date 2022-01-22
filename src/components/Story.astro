@@ -14,26 +14,36 @@ iframe{
 </style>
 <iframe id="story" src={story} style="width: 100%" onload="injectStyles()" client:load />
 <script>
- function injectStyles() {
-	let link = document.createElement("link");
-	link.href = "/assets/variables.css"; 
-	link.rel = "stylesheet"; 
-	link.type = "text/css"; 
-	frames[0].document.head.appendChild(link);
+	function injectStyles() {
+		let link = document.createElement("link");
+		link.href = "/assets/variables.css"; 
+		link.rel = "stylesheet"; 
+		link.type = "text/css"; 
+		frames[0].document.head.appendChild(link);
 
- 	let dc = document.createElement("link");
-	dc.href = "/stories/dimm-city.css"; 
-	dc.rel = "stylesheet"; 
-	dc.type = "text/css"; 
-	frames[0].document.head.appendChild(dc);
- };
-document.addEventListener("story.selected", (e) => {
-   loadStory(e.detail);
-});
+		let dc = document.createElement("link");
+		dc.href = "/stories/dimm-city.css"; 
+		dc.rel = "stylesheet"; 
+		dc.type = "text/css"; 
+		frames[0].document.head.appendChild(dc);
+	};
 
-function loadStory(story) {
-	frames[0].location = `/stories/${story}.html`;
 	
-}
+	function loadStory(story) {
+		if(!story) story = "none";
+		frames[0].location = `/stories/${story}.html`;
 
+		
+	}
+
+	function selectStory(story) {
+		loadStory(story);
+		document.dispatchEvent(new CustomEvent('story.selected',{
+			detail: story
+		}));
+	}
+	
+	function exitStory() {
+		selectStory();
+	}
 </script>
