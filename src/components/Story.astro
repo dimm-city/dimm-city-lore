@@ -1,5 +1,5 @@
 ---
-let story = Astro.props.src || "/stories/prologue/Prologue.html";
+let story = Astro.props.src || "/stories/none.html";
 let type = "SugarCubev2";
 
 ---
@@ -27,4 +27,13 @@ iframe{
 	dc.type = "text/css"; 
 	frames[0].document.head.appendChild(dc);
  };
+document.addEventListener("story.selected", (e) => {
+   loadStory(e.detail);
+});
+
+function loadStory(story) {
+	frames[0].location = `/stories/${story}.html`;
+	
+}
+
 </script>

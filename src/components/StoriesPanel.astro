@@ -1,0 +1,21 @@
+<div class="stories-panel" data-augmented-ui="tl-2-clip-x">
+  <div class="search-bar">
+    <input type="text" placeholder="search" name="search">
+    <button>Show All</button>
+  </div>
+  <ul class="story-items" data-augmented-ui-reset>
+    <li data-augmented-ui onclick="selectStory('intro/Introduction')" client:visible>Intro</li>
+    <li data-augmented-ui onclick="selectStory('prologue/Prologue')">Prologue</li>
+    <li data-augmented-ui>
+      <p>Help</p>
+      <small>A quick tutorial on how to use this reader</small>
+    </li>
+  </ul>
+</div>
+<script>
+  function selectStory(story) {
+    document.dispatchEvent(new CustomEvent('story.selected',{
+      detail: story
+    }));
+  }
+</script>

@@ -346,6 +346,7 @@ html {
     display: none;
 }
 .story-items li {
+    cursor: pointer;
     margin-bottom: 24px;
     padding: 8px;
     min-height: 20%;
@@ -353,6 +354,7 @@ html {
     font-size: 2.5vh;
     color: white;
     text-shadow: 0 0 0.25vh black, 0 0 0.25vh black;
+    transition: --aug-border-all 1s;
     --aug-clip-tl1: initial;
     --aug-clip-tr1: initial;
     --aug-clip-bl1: initial;
@@ -368,7 +370,10 @@ html {
         radial-gradient(circle at bottom right, var(--pink) 40px, transparent 50px),
         radial-gradient(circle at bottom left, var(--blue) 20px, transparent 30px);
 }
-
+.story-items li:hover {
+    --aug-border-all: 0.5vh;
+    transform: scale3d(1.1);
+}
 @media (max-width: 750px) {
     .augmented-video-decoration,
     .acordion-divider-decoration {
