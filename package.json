@@ -9,7 +9,10 @@
     "preview": "astro preview"
   },
   "devDependencies": {
-    "astro": "^0.22.17",
-    "@astrojs/renderer-svelte": "^0.3.1"
+    "@astrojs/renderer-svelte": "^0.3.1",
+    "astro": "^0.22.17"
+  },
+  "dependencies": {
+    "augmented-ui": "^2.0.0"
   }
 }

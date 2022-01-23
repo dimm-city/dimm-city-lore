@@ -3,37 +3,22 @@ let story = Astro.props.src || "/stories/none.html";
 let type = "SugarCubev2";
 
 ---
-<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Droid+Sans+Mono" />
 <style>
-iframe{
+/* iframe{
 	border: 0;
 	width: 90%;
 	margin: 0.33em;
     overflow: hidden;
-}
+} */
+iframe { width: 100%; height: 100%; clip-path: inherit; border: 0; }
+
 </style>
-<iframe id="story" src={story} style="width: 100%" onload="injectStyles()" client:load />
+<iframe id="story" src={story}  onload="storyLoaded()" client:load/>
 <script>
-	function injectStyles() {
-		let link = document.createElement("link");
-		link.href = "/assets/variables.css"; 
-		link.rel = "stylesheet"; 
-		link.type = "text/css"; 
-		frames[0].document.head.appendChild(link);
-
-		let dc = document.createElement("link");
-		dc.href = "/stories/dimm-city.css"; 
-		dc.rel = "stylesheet"; 
-		dc.type = "text/css"; 
-		frames[0].document.head.appendChild(dc);
-	};
-
-	
 	function loadStory(story) {
 		if(!story) story = "none";
-		frames[0].location = `/stories/${story}.html`;
-
-		
+		frames[0].location = `/stories/${story}.html`;	
+		console.log(frames[0].contentWindow);
 	}
 
 	function selectStory(story) {
@@ -45,5 +30,15 @@ iframe{
 
 	function exitStory() {
 		selectStory();
+	}
+
+	function storyLoaded() {
+		console.log('story loaded');
+		// console.log(document.querySelector('iframe').document.querySelector('.passage'));
+
+		// frames[0].document.querySelectorAll(".passage").forEach(function(el) {
+  		// 	console.log('passage');
+			  
+		// });
 	}
 </script>

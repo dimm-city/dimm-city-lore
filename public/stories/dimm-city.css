@@ -1,17 +1,38 @@
+@import url("https://fonts.googleapis.com/css?family=Barlow|Tomorrow:400,700&display=swap");
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* Works on Firefox */
+
+    scrollbar-width: 1px;
+    scrollbar-color: var(--secondary-accent) var(--primary-accent);
 }
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 5px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--primary-accent);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--secondary-accent);
+    border-radius: 20px;
+    border: 1px solid var(--primary-accent);
+}
+
 html,
 body {
     font: unset;
     /* color: white;  var(--third-accent); */
     color: #fff;
-    font-family: var(--main-font-family);
+    font-family: Tomorrow, var(--main-font-family), sans-serif;
     min-height: 100%;
     height: 100%;
-    overflow: hidden;
 }
 
 /*SugarCube Overrides*/
@@ -24,18 +45,26 @@ body {
     display: flex;
     padding: 0;
 }
-#passages {
+/* #passages {
     border-radius: 3em;
     background-color: rgba(255, 255, 255, 0.135);
     margin: 3em;
     text-shadow: black;
-}
-
+} */
 
 .passage {
     padding: 1.5em;
+    --aug-border: initial;
+    --aug-inlay: initial;
+    --aug-border-all: 0.1em;
+    --aug-border-bg: var(--third-accent);
+    --aug-inlay-bg: #ffffff17;
+    --aug-round-bl1: initial;
+    --aug-clip-tr1: initial;
+    --aug-clip-tl1: initial;
+    --aug-rect-br1: initial;
 }
-.passage.no-text{
+.passage.no-text {
     padding: 0;
     background-color: transparent;
 }
@@ -43,9 +72,27 @@ body {
     display: none;
 }
 /*End SugarCube Overrides*/
-
+.text-container {
+    padding: 1.5em;
+    --aug-border: initial;
+    --aug-inlay: initial;
+    --aug-border-all: 0.1em;
+    --aug-border-bg: var(--third-accent);
+    --aug-inlay-bg: #ffffff17;
+    --aug-round-bl1: initial;
+    --aug-clip-tr1: initial;
+    --aug-clip-tl1: initial;
+    --aug-rect-br1: initial;
+}
 a {
     color: var(--third-accent);
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    font-family: Tomorrow, sans-serif;
+    font-size: 0.85rem;
+    text-transform: uppercase;
 }
 
 a:hover,
@@ -75,6 +122,15 @@ a:active {
     display: flex;
     justify-content: space-evenly;
     padding-bottom: 1em;
+    padding-top: 1em;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(
+        0deg,
+        rgba(2, 0, 36, 1) 0%,
+        rgba(29, 5, 60, 0.8) 85%,
+        rgba(243, 0, 255, 0.3) 97%,
+        rgba(0, 0, 0, 0.5) 100%
+    );
 }
 .action-toolbar a {
     font-size: 1.1em;
