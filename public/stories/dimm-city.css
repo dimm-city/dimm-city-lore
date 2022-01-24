@@ -66,17 +66,17 @@ body {
 }
 
 #passages {
-	position: relative;
-    width: 100%;    
+    position: relative;
+    width: 100%;
 }
 .passage {
-	left: 0;
-	position: relative;
-	top: 0;
-	transition: opacity 2s ease;
+    left: 0;
+    position: relative;
+    top: 0;
+    transition: opacity 2s ease;
 }
 .passage-out {
-	opacity: 0;
+    opacity: 0;
     position: absolute;
     transition: opacity 1.2s ease;
 }
@@ -94,6 +94,10 @@ body {
     --aug-clip-tl1: initial;
     --aug-rect-br1: initial;
 }
+.text-container.fit {
+    padding: 1em;
+    width: fit-content;
+}
 a {
     color: var(--third-accent);
     border: 0;
@@ -108,7 +112,7 @@ a {
 a:hover,
 a:active {
     text-decoration: none;
-    color: var(--primary-accent);
+    color: var(--secondary-accent);
 }
 .background {
     width: 100vw;
@@ -144,6 +148,7 @@ a:active {
 }
 .action-toolbar a {
     font-size: 1.1em;
+    margin: 0 3em;
 }
 .action-toolbar a::before {
     content: "<";
