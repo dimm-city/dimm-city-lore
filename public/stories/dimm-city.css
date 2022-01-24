@@ -64,13 +64,23 @@ body {
     --aug-clip-tl1: initial;
     --aug-rect-br1: initial;
 }
-.passage.no-text {
-    padding: 0;
-    background-color: transparent;
+
+#passages {
+	position: relative;
+    width: 100%;    
 }
-.passage br {
-    display: none;
+.passage {
+	left: 0;
+	position: relative;
+	top: 0;
+	transition: opacity 2s ease;
 }
+.passage-out {
+	opacity: 0;
+    position: absolute;
+    transition: opacity 1.2s ease;
+}
+
 /*End SugarCube Overrides*/
 .text-container {
     padding: 1.5em;
