@@ -65,6 +65,10 @@ body {
     --aug-rect-br1: initial;
 }
 
+#story{
+    display: flex;
+    height: 100%;
+}
 #passages {
     position: relative;
     width: 100%;
@@ -74,6 +78,8 @@ body {
     position: relative;
     top: 0;
     transition: opacity 2s ease;
+    display: flex;
+    height: 100%;
 }
 .passage-out {
     opacity: 0;
@@ -83,6 +89,7 @@ body {
 
 /*End SugarCube Overrides*/
 .text-container {
+    height: min-content;
     padding: 1.5em;
     --aug-border: initial;
     --aug-inlay: initial;
@@ -97,6 +104,13 @@ body {
 .text-container.fit {
     padding: 1em;
     width: fit-content;
+}
+.text-container.dark {    
+    --aug-inlay-bg: #000000c7;
+}
+.text-container.bottom {    
+    align-self: end;
+    margin-bottom: 4em;
 }
 a {
     color: var(--third-accent);

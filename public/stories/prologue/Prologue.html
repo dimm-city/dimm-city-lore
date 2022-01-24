@@ -98,10 +98,11 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 		<div id="init-lacking">Your browser lacks required capabilities. Please upgrade it or switch to another to continue.</div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<tw-storydata name="Prologue" startnode="1" creator="Twine" creator-version="2.3.15" ifid="CC85E1B8-4F08-4C1C-827C-D7BA0CD9E1ED" zoom="1" format="SugarCube" format-version="2.34.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Introduction" tags="" position="633,69" size="200,100">&lt;&lt;audio theme stop&gt;&gt;
+	<tw-storydata name="Prologue" startnode="1" creator="Twine" creator-version="2.3.15" ifid="CC85E1B8-4F08-4C1C-827C-D7BA0CD9E1ED" zoom="1" format="SugarCube" format-version="2.34.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Introduction" tags="" position="633,69" size="200,100">&lt;&lt;masteraudio stop&gt;&gt;
 &lt;img src=&quot;index.png&quot; class=&quot;background&quot; /&gt;
 &lt;div class=&quot;text-container&quot; data-augmented-ui&gt;
-Welcome to the story of how the founders created an opening to a world of dreams... and nightmares.
+&lt;h1&gt;Prologue - Scene 1&lt;/h1&gt;
+&lt;&lt;type 100ms start 1s keep&gt;&gt;Connection established&lt;&lt;/type&gt;&gt;
 &lt;/div&gt;
 &lt;div class=&quot;action-toolbar&quot;&gt;
 &lt;a onclick=&quot;window.parent.exitStory()&quot;&gt;close&lt;/a&gt;
@@ -109,6 +110,8 @@ Welcome to the story of how the founders created an opening to a world of dreams
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="2" name="Scene 1" tags="scene-1" position="1016,156" size="200,200">&lt;video class=&quot;background&quot; autoplay loop muted disablePictureInPicture&gt;
   &lt;source src=&quot;scene-1.mp4&quot; type=&quot;video/mp4&quot;&gt;
 &lt;/video&gt;
+&lt;&lt;audio theme play loop volume 0.9&gt;&gt;
+&lt;&lt;audio crickets play loop volume 0.05&gt;&gt;
 &lt;div class=&quot;text-container&quot; data-augmented-ui&gt;
  Perched on the edge of once revered crater, the rickety building looks almost timeless. Not well cared for, but somehow not completely overtaken by the forest that has filled in the sunken earth.
 &lt;/div&gt;
@@ -117,17 +120,22 @@ Welcome to the story of how the founders created an opening to a world of dreams
 [[exit|Introduction]]
 [[continue|Scene 2]]
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="3" name="StoryInit" tags="" position="76,47" size="200,200">&lt;&lt;cacheaudio &quot;theme&quot; &quot;theme.mp3&quot;&gt;&gt;
-&lt;&lt;audio theme play loop&gt;&gt;
+&lt;&lt;cacheaudio &quot;crickets&quot; &quot;crickets.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;wind&quot; &quot;wind.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;type2&quot; &quot;type2.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;type3&quot; &quot;type2.mp3&quot;&gt;&gt;
+&lt;&lt;audio theme stop loop&gt;&gt;
 &lt;&lt;script&gt;&gt;
+Config.passages.nobr = true;
 Config.passages.transitionOut = &quot;opacity&quot;;
 Config.passages.transitionOut = 2010;
 importStyles([
   &quot;https://unpkg.com/augmented-ui@2/augmented-ui.min.css&quot;,
   &quot;https://fonts.googleapis.com/css?family=Droid+Sans+Mono&quot;,
   &quot;/assets/variables.css&quot;,
-  &quot;/stories/dimm-city.css&quot;
+  &quot;/stories/dimm-city-sugarcube2.css&quot;
 ])
-&lt;&lt;/script&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="Scene 2" tags="no-text" position="860,421" size="100,100">&lt;video class=&quot;background&quot; autoplay loop muted&gt;
+&lt;&lt;/script&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="Scene 2" tags="no-text" position="860,420" size="100,100">&lt;video class=&quot;background&quot; autoplay loop muted&gt;
   &lt;source src=&quot;scene-2.mp4&quot; type=&quot;video/mp4&quot;&gt;
 &lt;/video&gt;
 &lt;div class=&quot;text-container&quot; data-augmented-ui&gt;
@@ -142,6 +150,8 @@ This evening, it is hard to tell if the crater is being illuminated by the windo
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="5" name="Scene 3" tags="" position="637,439" size="100,100">&lt;video class=&quot;background&quot; autoplay loop muted&gt;
   &lt;source src=&quot;scene-3.mp4&quot; type=&quot;video/mp4&quot;&gt;
 &lt;/video&gt;
+&lt;&lt;audio crickets fadeout&gt;&gt;
+&lt;&lt;audio type2 play loop volume 0.4&gt;&gt;
 &lt;div class=&quot;text-container&quot; data-augmented-ui&gt;
 A thin phantom of a man sits at a dimly lit desk. He slowly types on a keyboard, reads the screen, and begins typing again. 
 
@@ -154,8 +164,13 @@ This time he types with a vigor not seen in this little shack long before any of
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="6" name="Scene 4" tags="" position="351,429" size="100,100">&lt;video class=&quot;background&quot; autoplay loop muted&gt;
   &lt;source src=&quot;scene-4.mp4&quot; type=&quot;video/mp4&quot;&gt;
 &lt;/video&gt;
+&lt;&lt;audio &quot;:playing:not(theme)&quot; stop&gt;&gt;
+&lt;&lt;audio type2 fadeout&gt;&gt;
+&lt;&lt;audio crickets fadein volume 0.02 loop&gt;&gt;
+&lt;&lt;audio wind play volume 0.15 loop&gt;&gt;
+&lt;&lt;audio type3 play loop volume 0.3&gt;&gt;
 &lt;div class=&quot;text-container&quot; data-augmented-ui&gt;
-Outside the crater begins to glow and pulse with energy. It seems to almost dance with the rhythm of the tap of the keys coming from inside... 
+Outside the crater begins to glow and pulse with energy. It seems to almost dance with the tap of the keys coming from inside... 
 &lt;/div&gt;
 &lt;div class=&quot;action-toolbar&quot;&gt;
 &lt;&lt;back &quot;back&quot;&gt;&gt;
