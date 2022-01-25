@@ -6,6 +6,7 @@ let selectedStory = Astro.props.selectedStory || "/stories/none.html";
 ---
 
 <MainLayout title="Lore">
+    <script src={Astro.resolve("index.js")}></script>
     <style>
         /* .video-wrapper {
   position: relative;
@@ -22,14 +23,7 @@ let selectedStory = Astro.props.selectedStory || "/stories/none.html";
 } */
     </style>
     <script>
-        document.addEventListener("story.selected", (e) => {
-            console.log("s", e);
-            if (e.detail > "" && e.detail != "stories/none.html") {
-                document.querySelector(".vertical-acordion").classList.remove("bottom");
-            } else {
-                document.querySelector(".vertical-acordion").classList.add("bottom");
-            }
-        });
+        
     </script>
     <div class="vertical-acordion bottom">
         <div class="top-panel">

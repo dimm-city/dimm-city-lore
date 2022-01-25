@@ -1,0 +1,29 @@
+:root {
+    --main-font-family: "Tomorrow", "Droid Sans Mono", "Comfortaa", cursive, Nunito, -apple-system, BlinkMacSystemFont, Segoe UI,
+        Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+
+    --bs-body-font-family: var(--main-font-family);
+    --bg-main: #01242f;
+    --bg-secondary: #190030;
+
+    --light: rgba(255, 255, 255, 0.9);
+    --blue-accent: #0093c4;
+    --primary-accent: var(--blue-accent);
+    --secondary-accent: #c643ff;
+    /* #ff8300; */
+    --third-accent: #ff15cb;
+    --fourth-accent: #bef800;
+    --disabled-color: rgb(196, 192, 192);
+}
+
+* {
+    scrollbar-color: var(--third-accent) var(--secondary-accent);
+    scrollbar-width: thin;
+}
+
+.text-primary {
+    color: var(--primary-accent) !important;
+}
+.text-highlight {
+    color: var(--third-accent);
+}

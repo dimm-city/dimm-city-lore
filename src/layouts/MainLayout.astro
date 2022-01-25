@@ -11,8 +11,8 @@ let title = Astro.props.title;
 		<title>{title}</title>
 		<link rel="icon" type="image/x-icon" href="/favicon.ico" />
 		<link rel="stylesheet" type="text/css" href="//unpkg.com/augmented-ui@2/augmented-ui.min.css">
-		<link rel="stylesheet" type="text/css" href="/assets/main.css">
-		<link rel="stylesheet" type="text/css" href="/assets/main.mobile.css">	
+		<link rel="stylesheet" type="text/css" href={Astro.resolve('../styles/main.css')}>
+		<link rel="stylesheet" type="text/css" href={Astro.resolve('../styles/main.mobile.css')}>	
 	</head>
 	<body>
 		<slot/>
