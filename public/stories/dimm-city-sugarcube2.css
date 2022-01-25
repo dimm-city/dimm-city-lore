@@ -88,12 +88,6 @@ body {
     transition: opacity 1.2s ease;
 }
 
-@media all and (max-width: 768px), (max-aspect-ratio: 3/4) {
-    .passage {
-        padding-top: 3em;
-    }
-}
-
 /*End SugarCube Overrides*/
 .text-container {
     height: min-content;
@@ -178,4 +172,28 @@ a:active {
 .action-toolbar a::after {
     content: ">";
     padding-left: 0.25em;
+}
+
+@media all and (max-width: 768px), (max-aspect-ratio: 3/4) {
+    .passage {
+        padding-top: 3em;
+    }
+
+    .action-toolbar {
+        padding-bottom: 0.1em;
+        padding-top: 0.1em;
+    }
+
+    .action-toolbar a {
+        font-size: 0.8em;
+        margin: 0 1em;
+    }
+    .action-toolbar a::before {
+        content: "<";
+        padding-right: 0.1em;
+    }
+    .action-toolbar a::after {
+        content: ">";
+        padding-left: 0.1em;
+    }
 }

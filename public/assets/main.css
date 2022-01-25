@@ -95,17 +95,6 @@ html {
     overflow: hidden;
 }
 
-/* @media (max-aspect-ratio: 4/3) { */
-  @media all and (max-width: 768px),  (max-aspect-ratio: 3/4) {
-    .video-wrapper {
-        position: relative;
-        max-height: 90vh;
-        max-width: 100vw;
-        aspect-ratio: 9 / 16;
-        margin: auto;
-        /*calc((100vh - 100% / 16 * 9) / 2 - 5vh);*/
-    }
-}
 .accordion-divider {
     --ds: drop-shadow(0 0 2vh var(--blue));
     filter: var(--ds) var(--ds);
@@ -187,6 +176,7 @@ html {
 
 .top-panel {
     transition: margin-top var(--easing);
+    margin-top: 1em;
 }
 .bottom .top-panel {
     margin-top: -100vh;
@@ -380,44 +370,4 @@ html {
 .story-items li:hover {
     --aug-border-all: 0.5vh;
     transform: scale3d(1.1);
-}
-@media (max-width: 750px) {
-    .augmented-video-decoration,
-    .acordion-divider-decoration {
-        --aug-border-all: 0.25vh;
-    }
-    .bottom .acordion-divider-decoration {
-        --aug-border-bottom: 0.25vh;
-    }
-    .vertical-acordion {
-        width: 99vw;
-    }
-    .stories-panel {
-        --aug-tl-extend2: 70%;
-        --aug-border-all: 0.25vh;
-        --aug-border-right: 0.125vh;
-    }
-    .characters-panel {
-        --aug-tr-extend1: 70%;
-        --aug-border-all: 0.25vh;
-        --aug-border-left: 0.125vh;
-    }
-    .stories-header,
-    .characters-header {
-        width: 70%;
-    }
-    .stories-header {
-        right: calc(30% - 2vh - max(4vh, 30px));
-    }
-    .characters-header {
-        left: calc(30% - 2vh - max(4vh, 30px));
-    }
-}
-
-@media (max-width: 500px) {
-    .stories-header,
-    .characters-header {
-        font-size: 16px;
-        padding-top: 8px;
-    }
 }
