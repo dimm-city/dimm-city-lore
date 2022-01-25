@@ -44,6 +44,7 @@ body {
     justify-content: center;
     display: flex;
     padding: 0;
+    margin-left: unset !important;
 }
 /* #passages {
     border-radius: 3em;
@@ -65,7 +66,7 @@ body {
     --aug-rect-br1: initial;
 }
 
-#story{
+#story {
     display: flex;
     height: 100%;
 }
@@ -105,10 +106,10 @@ body {
     padding: 1em;
     width: fit-content;
 }
-.text-container.dark {    
+.text-container.dark {
     --aug-inlay-bg: #000000c7;
 }
-.text-container.bottom {    
+.text-container.bottom {
     align-self: end;
     margin-bottom: 4em;
 }
@@ -171,4 +172,28 @@ a:active {
 .action-toolbar a::after {
     content: ">";
     padding-left: 0.25em;
+}
+
+@media all and (max-width: 768px), (max-aspect-ratio: 3/4) {
+    .passage {
+        padding-top: 3em;
+    }
+
+    .action-toolbar {
+        padding-bottom: 0.1em;
+        padding-top: 0.1em;
+    }
+
+    .action-toolbar a {
+        font-size: 0.8em;
+        margin: 0 1em;
+    }
+    .action-toolbar a::before {
+        content: "<";
+        padding-right: 0.1em;
+    }
+    .action-toolbar a::after {
+        content: ">";
+        padding-left: 0.1em;
+    }
 }
