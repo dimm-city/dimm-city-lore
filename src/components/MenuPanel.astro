@@ -2,19 +2,14 @@
 import StoryMenu from "../components/StoryMenu.astro";
 let selectedMenu = "Archive";
 ---
-
 <div class="menu-container">
     <h1 class="left-header" data-augmented-ui="tl-clip l-clip">
         {selectedMenu}
     </h1>
     <div class="right-header" data-augmented-ui="tr-clip r-clip">
         <i class="bi bi-menu-app"></i>
-        <!-- <a><i class="btn gg-menu-oreos"></i></a> -->
     </div>
-
-    <!--<slot /> <StoryMenu /> -->
     <div class="main-panel" data-augmented-ui="tl-2-clip-x tr-2-clip-x">
-        <!-- <StoriesList /> -->
         <StoryMenu />
     </div>
 </div>
@@ -50,31 +45,13 @@ let selectedMenu = "Archive";
     }
     .right-header {
         grid-area: 1/2;
-        /* text-align: right; */
-        /* padding-right: max(4vh,30px); */
         --aug-tr1: (max(4vh, 30px) / 3);
         --aug-r: (max(4vh, 30px) / 3);
-        /* justify-self: left; */
         left: calc(50% - 2vh - max(4vh, 30px));
         --aug-clip-bl1: initial;
         --aug-bl1: max(4vh, 30px);
         display: flex;
         justify-content: center;
-        /* padding-top: 0.5em; */
-
-        /*
-        grid-area: 1 / 2;
-        text-align: right;
-        padding-right: max(4vh, 30px);
-        --aug-tr1: (max(4vh, 30px) / 3);
-        --aug-r: (max(4vh, 30px) / 3);
-        justify-self: left;
-        left: calc(50% - 2vh - max(4vh, 30px));
-        --aug-clip-bl1: initial;
-        --aug-bl1: max(4vh, 30px);
-        display: flex;
-        justify-content: center;
-        padding-top: 0.5em;*/
     }
     .main-panel {
         grid-area: 1 / 1 / 3 / 3;
@@ -95,74 +72,35 @@ let selectedMenu = "Archive";
         background: rgb(17 17 17 / 0.75);
     }
 
-    /* .left-panel {
-        grid-area: 1 / 1 / 3 / 1;
-         --aug-tl1: 2vh;
-        --aug-tl2: max(4vh, 30px);
-        --aug-tl-extend2: 50%;
-        --aug-border-right: 0.25vh; 
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 80px 1fr;
-        grid-row-gap: 16px;
-    }
-    .right-panel {
-        grid-area: 1 / 2 / 3 / 3;
-        --aug-tr1: max(4vh, 30px);
-        --aug-tr2: 2vh;
-        --aug-tr-extend1: 50%;
-        --aug-border-left: 0.25vh;
-    } 
-
-    .left-panel,
-    .right-panel {
-        --aug-border: initial;
-        --aug-border-all: 0.5vh;
-        --aug-border-bottom: 0px;
-        --aug-border-bg: var(--blue);
-        background: rgb(17 17 17 / 0.75);
-    }*/
-
-    /* @media (max-width: 750px) {
-        .menu-container {
-            grid-template-columns: 1fr;
-            filter: drop-shadow(0 0 2vh var(--pink));
-        }
-        
-        .main-panel {
-            --aug-tl-extend2: 70%;
-            --aug-border-all: 0.25vh;
-            --aug-border-right: 0.125vh;
-
-            --aug-tr-extend1: 70%;
-            --aug-border-all: 0.25vh;
-            --aug-border-left: 0.125vh;
-        }
-        .left-header,
-        .right-header {
-            width: 70%;
-        }
-        .left-header {
-            right: calc(30% - 2vh - max(4vh, 30px));
-            display: flex;
-        }
-        .right-header {
-            left: calc(30% - 2vh - max(4vh, 30px));
-            display: none;
-        }
-    }
-*/
     @media (max-width: 576px) {
         .left-header,
         .right-header {
             font-size: 1.2em;
         }
         .left-header {
-           padding-right: 7em;
-           padding-top: 0.3em;
+            padding-right: 7em;
+            padding-top: 0.3em;
         }
         .right-header {
             /* left: calc(30% - 2vh - max(4vh, 30px)); */
+        }
+    }
+    @media (max-width: 480px) {
+        .left-header,
+        .right-header {
+            font-size: 1em;
+        }
+    }
+    @media (max-width: 415px) {
+        .left-header,
+        .right-header {
+            font-size: 0.9em;
+        }
+    }
+    @media (max-width: 360px) {
+        .left-header,
+        .right-header {
+            font-size: 0.7em;
         }
     }
 </style>
