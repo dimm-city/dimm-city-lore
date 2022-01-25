@@ -1,45 +1,67 @@
 ---
 let story = Astro.props.src || "/stories/none.html";
 let type = "SugarCubev2";
-
 ---
+
+<div class="video-wrapper">
+    <div
+        class="iframe-wrapper"
+        data-augmented-ui="bl-clip-inset br-clip-inset tl-2-clip-xy tr-2-clip-xy l-rect r-rect t-clip"
+    >
+        <iframe id="story" src={story} onload="storyLoaded()" client:load></iframe>
+    </div>
+    <div class="video-decoration-glow">
+        <div
+            aria-hidden="true"
+            class="augmented-video-decoration"
+            data-augmented-ui="bl-clip-inset br-clip-inset tl-2-clip-xy tr-2-clip-xy l-rect r-rect t-clip"
+        >
+        </div>
+    </div>
+</div>
+
+<script>
+    function loadStory(story) {
+        if (!story) story = "none";
+        frames[0].location = `/stories/${story}.html`;
+        console.log(frames[0].contentWindow);
+    }
+
+    function selectStory(story) {
+        loadStory(story);
+        document.dispatchEvent(
+            new CustomEvent("story.selected", {
+                detail: story,
+            })
+        );
+    }
+
+    function exitStory() {
+        selectStory();
+    }
+
+    function storyLoaded() {
+        console.log("story loaded");
+        // console.log(document.querySelector('iframe').document.querySelector('.passage'));
+
+        // frames[0].document.querySelectorAll(".passage").forEach(function(el) {
+        // 	console.log('passage');
+
+        // });
+    }
+</script>
+
 <style>
-/* iframe{
+    /* iframe{
 	border: 0;
 	width: 90%;
 	margin: 0.33em;
     overflow: hidden;
 } */
-iframe { width: 100%; height: 100%; clip-path: inherit; border: 0; }
-
+    iframe {
+        width: 100%;
+        height: 100%;
+        clip-path: inherit;
+        border: 0;
+    }
 </style>
-<iframe id="story" src={story}  onload="storyLoaded()" client:load/>
-<script>
-
-	function loadStory(story) {
-		if(!story) story = "none";
-		frames[0].location = `/stories/${story}.html`;	
-		console.log(frames[0].contentWindow);
-	}
-
-	function selectStory(story) {
-		loadStory(story);
-		document.dispatchEvent(new CustomEvent('story.selected',{
-			detail: story
-		}));
-	}
-
-	function exitStory() {
-		selectStory();
-	}
-
-	function storyLoaded() {
-		console.log('story loaded');
-		// console.log(document.querySelector('iframe').document.querySelector('.passage'));
-
-		// frames[0].document.querySelectorAll(".passage").forEach(function(el) {
-  		// 	console.log('passage');
-			  
-		// });
-	}
-</script>

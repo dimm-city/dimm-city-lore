@@ -7,50 +7,9 @@ let selectedStory = Astro.props.selectedStory || "/stories/none.html";
 
 <MainLayout title="Lore">
     <script src={Astro.resolve("index.js")}></script>
-    <style>
-        /* .video-wrapper {
-  position: relative;
-  max-height: 90vh;
-  max-width: 100vw;
-  aspect-ratio: 16 / 9;
-  margin-top: calc((100vh - 100% / 16 * 9) / 2 - 5vh);
-}
-.video-wrapper .iframe-wrapper {
-  display: block;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-} */
-    </style>
-    <script>
-        
-    </script>
     <div class="vertical-acordion bottom">
         <div class="top-panel">
-            <div class="video-wrapper">
-                <div
-                    class="iframe-wrapper"
-                    data-augmented-ui="bl-clip-inset br-clip-inset tl-2-clip-xy tr-2-clip-xy l-rect r-rect t-clip"
-                >
-                    <Story src={selectedStory} />
-                </div>
-                <div class="video-decoration-glow">
-                    <div
-                        aria-hidden="true"
-                        class="augmented-video-decoration"
-                        data-augmented-ui="bl-clip-inset br-clip-inset tl-2-clip-xy tr-2-clip-xy l-rect r-rect t-clip"
-                    >
-                    </div>
-                </div>
-                <!-- <p class="video-text-overlay">
-          Here are some bullet points about the design
-        * 2 panel accordion
-        *  each taking most of the viewport when it is shown
-        * first panel is a video player with text overlay
-        * second panel is a 2 column panel
-        * the collapsed panel will only contain a toolbar with a few buttons
-      </p> -->
-            </div>
+            <Story src={selectedStory} />
         </div>
         <div class="accordion-divider">
             <div
