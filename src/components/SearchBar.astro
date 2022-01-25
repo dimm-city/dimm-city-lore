@@ -1,0 +1,39 @@
+<div class="search-bar">
+    <input type="text" placeholder="search" name="search" />
+    <button>Show All</button>
+</div>
+
+<style>
+    .search-bar {
+        white-space: nowrap;
+        margin-top: 50px;
+        display: flex;
+        justify-content: center;
+        filter: drop-shadow(0 0 1vh var(--pink));
+        gap: 5px;
+    }
+    .search-bar input {
+        padding: 8px;
+        width: 65%;
+        background: none;
+        border: 2px solid var(--pink);
+        border-radius: 50px;
+        color: white;
+        text-shadow: 0 0 0.25vh black, 0 0 0.25vh black;
+    }
+    .search-bar input::placeholder {
+        color: white;
+        opacity: 0.5;
+        text-shadow: 0 0 0.25vh black, 0 0 0.25vh black;
+    }
+    .search-bar button {
+        cursor: pointer;
+        padding: 8px;
+        padding-top: 6px;
+        background: transparent;
+        color: white;
+        text-shadow: 0 0 0.25vh black, 0 0 0.25vh black;
+        border: 2px solid var(--blue);
+        border-radius: 50px;
+    }
+</style>

@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Tomorrow:400,700&display=swap");
-/* @import url('/node_modules/@fontsource/tomorrow/'); */
 @import url('./variables.css');
-
+@import url('./controls.css');
 * {
     margin: 0;
     padding: 0;
@@ -16,9 +15,7 @@ body {
 }
 
 html {
-    --pink: #ef1ebf;
-    --blue: #3e6ab3;
-    --easing: 0.75s ease-in-out;
+  
     /* https://images2.alphacoders.com/105/1054348.jpg */
     background: url(/assets/bg-04.jpg) center center / cover no-repeat,
         linear-gradient(to bottom left, #3c1b49, #3d0a33);
