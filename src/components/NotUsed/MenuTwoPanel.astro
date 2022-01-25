@@ -1,0 +1,141 @@
+---
+import StoriesList from "../components/StoriesList.astro";
+import CharactersList from "../components/CharactersList.astro";
+---
+
+<div class="menu-container">
+    <h1 class="left-header" data-augmented-ui="tl-clip l-clip">
+        Archive
+        <span class="menu-icon"></span>
+    </h1>
+    <div class="right-header" data-augmented-ui="tr-clip r-clip"><a><i class="btn gg-menu-oreos"></i></a></div>
+   <div class="left-panel" data-augmented-ui="tl-2-clip-x">
+        <StoriesList />
+    </div>
+    <div class="right-panel" data-augmented-ui="tr-2-clip-x">
+        <CharactersList />
+    </div>
+</div>
+
+<style>
+    .menu-container {
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: max(4vh, 30px) 1fr;
+        filter: drop-shadow(0 0 2vh var(--pink));
+    }
+    .menu-icon {
+        display: none;
+    }
+    .left-header,
+    .right-header {
+        background: var(--pink);
+        width: 50%;
+        position: relative;
+        font-size: 1.5em;
+
+        color: white;
+        padding-top: 3px;
+        text-shadow: 0 0 0.25vh black, 0 0 0.25vh black, 0 0 0.25vh black;
+    }
+    .left-header {
+        grid-area: 1 / 1;
+        padding-left: max(4vh, 30px);
+        --aug-tl1: (max(4vh, 30px) / 3);
+        --aug-l: (max(4vh, 30px) / 3);
+        justify-self: right;
+        right: calc(50% - 2vh - max(4vh, 30px));
+        --aug-clip-br1: initial;
+        --aug-br1: max(4vh, 30px);
+    }
+    .right-header {
+        grid-area: 1 / 2;
+        text-align: right;
+        padding-right: max(4vh, 30px);
+        --aug-tr1: (max(4vh, 30px) / 3);
+        --aug-r: (max(4vh, 30px) / 3);
+        justify-self: left;
+        left: calc(50% - 2vh - max(4vh, 30px));
+        --aug-clip-bl1: initial;
+        --aug-bl1: max(4vh, 30px);
+        display: flex;
+        justify-content: center;
+        padding-top: 0.5em;
+    }
+    .right-header i {
+        transform: scale(var(--ggs, 1.1));
+    }
+    .left-panel {
+        grid-area: 1 / 1 / 3 / 1;
+        --aug-tl1: 2vh;
+        --aug-tl2: max(4vh, 30px);
+        --aug-tl-extend2: 50%;
+        --aug-border-right: 0.25vh;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 80px 1fr;
+        grid-row-gap: 16px;
+    }
+    .right-panel {
+        grid-area: 1 / 2 / 3 / 3;
+        --aug-tr1: max(4vh, 30px);
+        --aug-tr2: 2vh;
+        --aug-tr-extend1: 50%;
+        --aug-border-left: 0.25vh;
+    }
+
+    .left-panel,
+    .right-panel {
+        --aug-border: initial;
+        --aug-border-all: 0.5vh;
+        --aug-border-bottom: 0px;
+        --aug-border-bg: var(--blue);
+        background: rgb(17 17 17 / 0.75);
+    }
+
+    @media (max-width: 750px) {
+        .menu-container {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1;
+            filter: drop-shadow(0 0 2vh var(--pink));
+        }
+        .menu-icon {
+            display: block;
+            width: 100%;
+            text-align: right;
+            padding-right: 2em;
+        }
+        .left-panel {
+            --aug-tl-extend2: 70%;
+            --aug-border-all: 0.25vh;
+            --aug-border-right: 0.125vh;
+        }
+        .right-panel {
+            display: none;
+            --aug-tr-extend1: 70%;
+            --aug-border-all: 0.25vh;
+            --aug-border-left: 0.125vh;
+        }
+        .left-header,
+        .right-header {
+            width: 70%;
+        }
+        .left-header {
+            right: calc(30% - 2vh - max(4vh, 30px));
+            display: flex;
+        }
+        .right-header {
+            left: calc(30% - 2vh - max(4vh, 30px));
+            display: none;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .left-header,
+        .right-header {
+            font-size: 16px;
+            padding-top: 8px;
+        }
+    }
+</style>

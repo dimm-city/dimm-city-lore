@@ -1,3 +1,8 @@
 document.addEventListener("story.selected", (e) => {
-    console.log(e.detail);
+    console.log("story.selected", e);
+    if (e.detail > "" && e.detail != "stories/none.html") {
+        document.querySelector(".vertical-acordion").classList.remove("bottom");
+    } else {
+        document.querySelector(".vertical-acordion").classList.add("bottom");
+    }
 });
