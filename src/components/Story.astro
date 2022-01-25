@@ -15,6 +15,7 @@ iframe { width: 100%; height: 100%; clip-path: inherit; border: 0; }
 </style>
 <iframe id="story" src={story}  onload="storyLoaded()" client:load/>
 <script>
+
 	function loadStory(story) {
 		if(!story) story = "none";
 		frames[0].location = `/stories/${story}.html`;	
