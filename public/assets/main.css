@@ -176,7 +176,7 @@ html {
 
 .top-panel {
     transition: margin-top var(--easing);
-    margin-top: 1em;
+   
 }
 .bottom .top-panel {
     margin-top: -100vh;
