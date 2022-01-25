@@ -44,6 +44,7 @@ body {
     justify-content: center;
     display: flex;
     padding: 0;
+    margin-left: unset !important;
 }
 /* #passages {
     border-radius: 3em;
@@ -65,7 +66,7 @@ body {
     --aug-rect-br1: initial;
 }
 
-#story{
+#story {
     display: flex;
     height: 100%;
 }
@@ -87,6 +88,12 @@ body {
     transition: opacity 1.2s ease;
 }
 
+@media all and (max-width: 768px), (max-aspect-ratio: 3/4) {
+    .passage {
+        padding-top: 3em;
+    }
+}
+
 /*End SugarCube Overrides*/
 .text-container {
     height: min-content;
@@ -105,10 +112,10 @@ body {
     padding: 1em;
     width: fit-content;
 }
-.text-container.dark {    
+.text-container.dark {
     --aug-inlay-bg: #000000c7;
 }
-.text-container.bottom {    
+.text-container.bottom {
     align-self: end;
     margin-bottom: 4em;
 }
