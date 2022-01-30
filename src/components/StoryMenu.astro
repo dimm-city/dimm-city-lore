@@ -19,7 +19,6 @@
             <p><i class="bi bi-x-octagon"></i>Locked</p>
             <small>identity unknown</small>
         </div>
-        
     </div>
 </div>
 
@@ -45,7 +44,6 @@
     .story-items div {
         height: 8em;
         cursor: pointer;
-        margin-bottom: 24px;
         padding: 1em;
         min-height: 20%;
         font-size: 2.5vh;
@@ -85,15 +83,23 @@
     }
 
     @media (max-width: 768px) {
+        .story-menu {
+            margin: 0em 1.5em 0;
+        }
         .story-items {
             grid-template-columns: repeat(1, 1fr);
             grid-gap: 1em;
+            padding-top: 3em;
         }
     }
-     @media (max-width: 480px) {
+    @media (max-width: 480px) {
+        .story-menu {
+            margin: 0em 1.5em 0;
+        }
         .story-items {
             grid-template-columns: repeat(1, 1fr);
             grid-gap: 0.8em;
+            padding-top: 3em;
         }
     }
 </style>
