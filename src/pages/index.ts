@@ -1,4 +1,4 @@
-document.addEventListener("story.selected", (e) => {
+document.addEventListener("story.selected", (e: CustomEvent) => {
     console.log("story.selected", e);
     if (e.detail > "" && e.detail != "stories/none.html") {
         document.querySelector(".vertical-acordion").classList.remove("bottom");

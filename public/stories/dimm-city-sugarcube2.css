@@ -215,7 +215,8 @@ a:active {
 .pan-left {
     animation: pan-left var(--story-animation-length) forwards;
 }
-.zoom, .zoom-in {
+.zoom,
+.zoom-in {
     animation: zoom-in var(--story-animation-length) forwards;
 }
 .zoom-out {

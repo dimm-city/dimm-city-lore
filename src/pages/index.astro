@@ -6,7 +6,7 @@ let selectedStory = Astro.props.selectedStory || "/stories/none.html";
 ---
 
 <MainLayout title="Archive">
-    <script src={Astro.resolve("index.js")}></script>
+    <script src={Astro.resolve("index.ts")}></script>
     <div class="vertical-acordion bottom">
         <div class="top-panel">
             <Story src={selectedStory} />

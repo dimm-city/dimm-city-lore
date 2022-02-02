@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Tomorrow:400,700&display=swap");
+@import url('../../node_modules/augmented-ui/augmented-ui.min.css');
 @import url('./variables.css');
 @import url('./controls.css');
 * {
@@ -17,7 +18,7 @@ body {
 html {
   
     /* https://images2.alphacoders.com/105/1054348.jpg */
-    background: url(/assets/bg-04.jpg) center center / cover no-repeat,
+    background: url(/assets/bg/bg-04.jpg) center center / cover no-repeat,
         linear-gradient(to bottom left, #3c1b49, #3d0a33);
 }
 
