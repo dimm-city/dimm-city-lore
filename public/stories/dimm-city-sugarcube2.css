@@ -165,7 +165,7 @@ a:active {
     );
 }
 .action-toolbar a {
-    font-size: 1.1em;
+    font-size: 1.5em;
     margin: 0 3em;
 }
 .action-toolbar a::before {
@@ -185,11 +185,17 @@ a:active {
     .action-toolbar {
         padding-bottom: 0.1em;
         padding-top: 0.1em;
+        margin-bottom: 0.8em;
     }
 
     .action-toolbar a {
-        font-size: 0.8em;
+        font-size: 1.1em;
         margin: 0 1em;
+    }
+    .action-toolbar a.next {
+        font-size: 1.1em;
+        margin: 0 1em;
+        content: '>'
     }
     .action-toolbar a::before {
         content: "<";
