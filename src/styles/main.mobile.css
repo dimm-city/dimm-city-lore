@@ -3,11 +3,11 @@
         --divider-gap: 3em;
     }
     .top-panel{
-        height: calc(100vh - var(--divider-gap));
+        height: calc(90vh - var(--divider-gap));
     }
     .video-wrapper {
         position: relative;
-        height: calc(100vh - var(--divider-gap));
+        height:100%;
         max-width: 90vw;
         aspect-ratio: 3/4;
         margin: 1em auto 0;
