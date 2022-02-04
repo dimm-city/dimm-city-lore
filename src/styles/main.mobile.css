@@ -3,7 +3,7 @@
         --divider-gap: 3em;
     }
     .top-panel{
-        height: calc(90vh - var(--divider-gap));
+        height: calc(85vh - var(--divider-gap));
     }
     .video-wrapper {
         position: relative;
