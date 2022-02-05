@@ -151,7 +151,7 @@ if(!Macro.has("text-container")){
 
 
 LoadScreen.unlock(lsLockId);</script><tw-passagedata pid="1" name="Start" tags="pan-right fit" position="307,150" size="100,100">&lt;&lt;audio &quot;:theme&quot; stop&gt;&gt;
-&lt;video class=&quot;background&quot; autoplay loop muted disablePictureInPicture playsinline&gt;
+&lt;video class=&quot;background&quot; autoplay loop muted disablePictureInPicture playsinline poster=&quot;/stories/intro/index.png&quot;&gt;
   &lt;source src=&quot;https://files.dimm.city/stories/intro/index.mp4&quot; type=&quot;video/mp4&quot;&gt;
 &lt;/video&gt;
 &lt;&lt;text-container&gt;&gt;
@@ -164,7 +164,7 @@ LoadScreen.unlock(lsLockId);</script><tw-passagedata pid="1" name="Start" tags="
 &lt;video hidden&gt;
   &lt;source src=&quot;https://files.dimm.city/stories/intro/scene-2.mp4&quot; type=&quot;video/mp4&quot;&gt;
 &lt;/video&gt;</tw-passagedata><tw-passagedata pid="2" name="scene-1" tags="pan-left dark" position="737,36" size="100,100">
-&lt;video class=&quot;background&quot; autoplay loop muted disablePictureInPicture playsinline&gt;
+&lt;video class=&quot;background&quot; autoplay loop muted disablePictureInPicture playsinline poster=&quot;/stories/intro/scene-1.png&quot;&gt;
   &lt;source src=&quot;scene-1.mp4&quot; type=&quot;video/mp4&quot;&gt;
 &lt;/video&gt;
 &lt;&lt;text-container&gt;&gt;
@@ -179,7 +179,7 @@ Since the beginning, humans have been fascinated by the Ether. Some cultures liv
   &lt;source src=&quot;scene-2.mp4&quot; type=&quot;video/mp4&quot;&gt;
 &lt;/video&gt;
 &lt;&lt;cacheaudio &quot;scene-2&quot; &quot;scene-2.mp3&quot;&gt;&gt;
-</tw-passagedata><tw-passagedata pid="3" name="scene-2" tags="zoom" position="1079,222" size="100,100">&lt;video class=&quot;background&quot; autoplay loop muted disablePictureInPicture&gt;
+</tw-passagedata><tw-passagedata pid="3" name="scene-2" tags="zoom" position="1079,222" size="100,100">&lt;video class=&quot;background&quot; autoplay loop muted disablePictureInPicture playsinline poster=&quot;/stories/intro/scene-2.png&quot;&gt;
   &lt;source src=&quot;scene-2.mp4&quot; type=&quot;video/mp4&quot;&gt;
 &lt;/video&gt;
 &lt;&lt;text-container&gt;&gt;
@@ -194,7 +194,7 @@ Sporos awaken in a place known as Dimm City. This city is the center of an ongoi
 &lt;&lt;/toolbar&gt;&gt;
 &lt;video hidden&gt;
   &lt;source src=&quot;scene-3.mp4&quot; type=&quot;video/mp4&quot;&gt;
-&lt;/video&gt;</tw-passagedata><tw-passagedata pid="4" name="scene-3" tags="pan-right dark" position="1015,376" size="100,100">&lt;video class=&quot;background pan-right&quot; autoplay loop muted disablePictureInPicture&gt;
+&lt;/video&gt;</tw-passagedata><tw-passagedata pid="4" name="scene-3" tags="pan-right dark" position="1015,376" size="100,100">&lt;video class=&quot;background pan-right&quot; autoplay loop muted disablePictureInPicture playsinline poster=&quot;/stories/intro/scene-3.png&quot;&gt;
   &lt;source src=&quot;scene-3.mp4&quot; type=&quot;video/mp4&quot;&gt;
 &lt;/video&gt;
 &lt;&lt;text-container&gt;&gt;
@@ -207,12 +207,12 @@ Sporos awaken in a place known as Dimm City. This city is the center of an ongoi
 &lt;&lt;/toolbar&gt;&gt;
 &lt;video hidden&gt;
   &lt;source src=&quot;scene-4.mp4&quot; type=&quot;video/mp4&quot;&gt;
-&lt;/video&gt;</tw-passagedata><tw-passagedata pid="5" name="scene-4" tags="pan-right fast dark" position="947,507" size="100,100">&lt;style&gt;
+&lt;/video&gt;</tw-passagedata><tw-passagedata pid="5" name="scene-4" tags="pan-right fast dark" position="930,524" size="100,100">&lt;style&gt;
 :root{
 --story-animation-length: 0s;
 }
 &lt;/style&gt;
-&lt;video class=&quot;background&quot; autoplay loop muted disablePictureInPicture&gt;
+&lt;video class=&quot;background&quot; autoplay loop muted disablePictureInPicture playsinline poster=&quot;/stories/intro/scene-4.png&quot;&gt;
   &lt;source src=&quot;scene-4.mp4&quot; type=&quot;video/mp4&quot;&gt;
 &lt;/video&gt;
 &lt;&lt;text-container&gt;&gt;
@@ -225,7 +225,7 @@ From this stronghold, they launch an insidious offensive to gain control of the 
 &lt;&lt;/toolbar&gt;&gt;
 &lt;video hidden&gt;
   &lt;source src=&quot;scene-5.mp4&quot; type=&quot;video/mp4&quot;&gt;
-&lt;/video&gt;</tw-passagedata><tw-passagedata pid="6" name="scene-5" tags="zoom dark" position="761,643" size="100,100">&lt;video class=&quot;background zoom&quot; autoplay loop muted disablePictureInPicture&gt;
+&lt;/video&gt;</tw-passagedata><tw-passagedata pid="6" name="scene-5" tags="zoom dark" position="761,643" size="100,100">&lt;video class=&quot;background&quot; autoplay loop muted disablePictureInPicture playsinline poster=&quot;/stories/intro/scene-5.png&quot;&gt;
   &lt;source src=&quot;scene-5.mp4&quot; type=&quot;video/mp4&quot;&gt;
 &lt;/video&gt;
 &lt;&lt;text-container&gt;&gt;
@@ -235,10 +235,7 @@ The citizens that reject this vision and stand against the attempts to centraliz
   &lt;&lt;back &quot;back&quot;&gt;&gt;
   [[exit|Start]]
   [[continue|scene-6]]
-&lt;&lt;/toolbar&gt;&gt;
-&lt;video hidden&gt;
-  &lt;source src=&quot;scene-6.mp4&quot; type=&quot;video/mp4&quot;&gt;
-&lt;/video&gt;</tw-passagedata><tw-passagedata pid="7" name="scene-6" tags="zoom-in dark" position="611,723" size="100,100">&lt;video class=&quot;background zoom-in&quot; autoplay loop muted disablePictureInPicture&gt;
+&lt;&lt;/toolbar&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="scene-6" tags="zoom-in dark" position="559,735" size="100,100">&lt;video class=&quot;background&quot; autoplay loop muted disablePictureInPicture playsinline poster=&quot;/stories/intro/scene-2.png&quot;&gt;
   &lt;source src=&quot;scene-2.mp4&quot; type=&quot;video/mp4&quot;&gt;
 &lt;/video&gt;
 &lt;&lt;text-container&gt;&gt;
@@ -251,7 +248,7 @@ What are their intentions? What motives would drive Dameon&#39;s followers to th
 &lt;&lt;/toolbar&gt;&gt;
 &lt;video hidden&gt;
   &lt;source src=&quot;scene-7.mp4&quot; type=&quot;video/mp4&quot;&gt;
-&lt;/video&gt;</tw-passagedata><tw-passagedata pid="8" name="scene-7" tags="pan-right bottom dark" position="316,760" size="100,100">&lt;video class=&quot;background pan-right&quot; autoplay loop muted disablePictureInPicture&gt;
+&lt;/video&gt;</tw-passagedata><tw-passagedata pid="8" name="scene-7" tags="pan-right bottom dark" position="316,760" size="100,100">&lt;video class=&quot;background pan-right&quot; autoplay loop muted disablePictureInPicture playsinline poster=&quot;/stories/intro/scene-7.png&quot;&gt;
   &lt;source src=&quot;scene-7.mp4&quot; type=&quot;video/mp4&quot;&gt;
 &lt;/video&gt;
 &lt;&lt;text-container&gt;&gt;
@@ -270,11 +267,11 @@ Well child, there is only one way to find out. I suggest you determine //your// 
 &lt;/video&gt;
 &lt;&lt;cacheaudio &quot;intro-theme&quot; &quot;intro-theme.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;scene-1&quot; &quot;scene-1.mp3&quot;&gt;&gt;
+&lt;&lt;waitforaudio&gt;&gt;
 &lt;&lt;createaudiogroup &quot;:theme&quot;&gt;&gt;
 	&lt;&lt;track &quot;intro-theme&quot; &gt;&gt;
 &lt;&lt;/createaudiogroup&gt;&gt;
 &lt;&lt;masteraudio muteonhide&gt;&gt;
-&lt;&lt;waitforaudio&gt;&gt;
 &lt;&lt;cacheaudio &quot;scene-2&quot; &quot;scene-2.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;scene-3&quot; &quot;scene-3.mp3&quot;&gt;&gt;
 &lt;&lt;cacheaudio &quot;scene-4&quot; &quot;scene-4.mp3&quot;&gt;&gt;
