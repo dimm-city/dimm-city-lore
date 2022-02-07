@@ -24,7 +24,7 @@ let type = "SugarCubev2";
     function loadStory(story) {
         if (!story) story = "none";
         frames[0].location = `/stories/${story}.html`;
-        console.log(frames[0].contentWindow);
+        //console.log(frames[0].contentWindow);
     }
 
     function selectStory(story) {
@@ -42,12 +42,6 @@ let type = "SugarCubev2";
 
     function storyLoaded() {
         console.log("story loaded");
-        // console.log(document.querySelector('iframe').document.querySelector('.passage'));
-
-        // frames[0].document.querySelectorAll(".passage").forEach(function(el) {
-        // 	console.log('passage');
-
-        // });
     }
 </script>
 

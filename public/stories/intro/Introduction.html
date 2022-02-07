@@ -108,8 +108,10 @@ importStyles([
 importScripts("/stories/dimm-city.js")
 	.then(function () {
 		console.log("script downloaded");
-		
-	
+		Engine.play(passage(), true);
+		console.log("re-rendered passage");
+		LoadScreen.unlock(lsLockId);
+		console.log("screen unlocked");
 	})
 	.catch(function (err) {
 		console.log(err);
@@ -123,34 +125,9 @@ window.parent.Story = Story;
 window.parent.UIBar = UIBar;
 window.parent.UI = UI;
 
-if(!Macro.has("toolbar")){
-	Macro.add("toolbar", {
-		tags: null,
-		handler: function () {
-			const el = document.createElement("div");
-			el.classList.add("action-toolbar");
-			$(el).wiki(this.payload[0].contents);
-			this.output.append(el); //, this.args);
-		},
-	});
-}
-
-if(!Macro.has("text-container")){
-	Macro.add("text-container", {
-		tags: null,
-		handler: function () {
-			const el = document.createElement("div");
-			el.classList.add("text-container");
-			el.toggleAttribute("data-augmented-ui");
-			$(el).wiki(this.payload[0].contents);
-			this.output.append(el); //, this.args);
-		},
-	});
-}
 
 
-
-LoadScreen.unlock(lsLockId);</script><tw-passagedata pid="1" name="Start" tags="pan-right fit" position="307,150" size="100,100">&lt;&lt;audio &quot;:theme&quot; stop&gt;&gt;
+</script><tw-passagedata pid="1" name="Start" tags="pan-right fit" position="307,150" size="100,100">&lt;&lt;audio &quot;:theme&quot; stop&gt;&gt;
 &lt;video class=&quot;background&quot; autoplay loop muted disablePictureInPicture playsinline poster=&quot;/stories/intro/index.png&quot;&gt;
   &lt;source src=&quot;https://files.dimm.city/stories/intro/index.mp4&quot; type=&quot;video/mp4&quot;&gt;
 &lt;/video&gt;
