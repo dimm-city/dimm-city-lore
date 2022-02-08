@@ -98,39 +98,25 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 		<div id="init-lacking">Your browser lacks required capabilities. Please upgrade it or switch to another to continue.</div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<tw-storydata name="Introduction" startnode="1" creator="Twine" creator-version="2.3.15" ifid="FDF0624E-7A52-4A31-85A9-354CBFD9A56B" zoom="1" format="SugarCube" format-version="2.34.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript">var lsLockId = LoadScreen.lock();
-var barUrl = "https://files.dimm.city";
-
+	<tw-storydata name="Introduction" startnode="1" creator="Twine" creator-version="2.3.15" ifid="FDF0624E-7A52-4A31-85A9-354CBFD9A56B" zoom="1" format="SugarCube" format-version="2.34.1" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript">const lsLockId = LoadScreen.lock();
+const baseUrl = "http://localhost:3000"; // "https://files.dimm.city";
 importStyles([  
-  "/stories/dimm-city.css"
+  baseUrl + "/stories/dimm-city.css"
 ]);
-
-importScripts("/stories/dimm-city.js")
+importScripts(baseUrl + "/stories/dimm-city.js")
 	.then(function () {
-		console.log("script downloaded");
-		Engine.play(passage(), true);
-		console.log("re-rendered passage");
-		LoadScreen.unlock(lsLockId);
-		console.log("screen unlocked");
+			Engine.play(passage(), true);
+			LoadScreen.unlock(lsLockId);
 	})
 	.catch(function (err) {
 		console.log(err);
 	});
 
 
-Config.passages.nobr = true;
-Config.passages.transitionOut = "opacity";
-Config.passages.transitionOut = 2010;
-window.parent.Story = Story;
-window.parent.UIBar = UIBar;
-window.parent.UI = UI;
-
 
 
 </script><tw-passagedata pid="1" name="Start" tags="pan-right fit" position="307,150" size="100,100">&lt;&lt;audio &quot;:theme&quot; stop&gt;&gt;
-&lt;video class=&quot;background&quot; autoplay loop muted disablePictureInPicture playsinline poster=&quot;/stories/intro/index.png&quot;&gt;
-  &lt;source src=&quot;https://files.dimm.city/stories/intro/index.mp4&quot; type=&quot;video/mp4&quot;&gt;
-&lt;/video&gt;
+&lt;&lt;background &quot;intro/index.mp4&quot; &quot;intro/index.png&quot;&gt;&gt;
 &lt;&lt;text-container&gt;&gt;
 	&lt;h1&gt;Welcome to Dimm City&lt;/h1&gt;
 &lt;&lt;/text-container&gt;&gt;
@@ -138,12 +124,8 @@ window.parent.UI = UI;
   &lt;a onclick=&quot;window.parent.exitStory()&quot;&gt;close&lt;/a&gt;
   [[continue|scene-1]]
 &lt;&lt;/toolbar&gt;&gt;
-&lt;video hidden&gt;
-  &lt;source src=&quot;https://files.dimm.city/stories/intro/scene-2.mp4&quot; type=&quot;video/mp4&quot;&gt;
-&lt;/video&gt;</tw-passagedata><tw-passagedata pid="2" name="scene-1" tags="pan-left dark" position="737,36" size="100,100">
-&lt;video class=&quot;background&quot; autoplay loop muted disablePictureInPicture playsinline poster=&quot;/stories/intro/scene-1.png&quot;&gt;
-  &lt;source src=&quot;scene-1.mp4&quot; type=&quot;video/mp4&quot;&gt;
-&lt;/video&gt;
+&lt;&lt;cachevideo &quot;intro/scene-1.mp4&quot; &quot;intro/scene-1.png&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="scene-1" tags="pan-left dark" position="737,36" size="100,100">&lt;&lt;background &quot;intro/scene-1.mp4&quot; &quot;intro/scene-1.png&quot;&gt;&gt;
+&lt;&lt;cachevideo &quot;intro/scene-2.mp4&quot; &quot;intro/scene-2.png&quot;&gt;&gt;
 &lt;&lt;text-container&gt;&gt;
 Since the beginning, humans have been fascinated by the Ether. Some cultures lived in harmony with it and recognized the interplay between the worlds within everyday life. Some created fables, ghost stories, and even religions to warn, or prevent, others from &quot;tampering with the unknown.&quot;
 &lt;&lt;/text-container&gt;&gt;
@@ -152,13 +134,8 @@ Since the beginning, humans have been fascinated by the Ether. Some cultures liv
   [[exit|Start]]
   [[continue|scene-2]]
 &lt;&lt;/toolbar&gt;&gt;
-&lt;video hidden&gt;
-  &lt;source src=&quot;scene-2.mp4&quot; type=&quot;video/mp4&quot;&gt;
-&lt;/video&gt;
-&lt;&lt;cacheaudio &quot;scene-2&quot; &quot;scene-2.mp3&quot;&gt;&gt;
-</tw-passagedata><tw-passagedata pid="3" name="scene-2" tags="zoom" position="1079,222" size="100,100">&lt;video class=&quot;background&quot; autoplay loop muted disablePictureInPicture playsinline poster=&quot;/stories/intro/scene-2.png&quot;&gt;
-  &lt;source src=&quot;scene-2.mp4&quot; type=&quot;video/mp4&quot;&gt;
-&lt;/video&gt;
+</tw-passagedata><tw-passagedata pid="3" name="scene-2" tags="zoom" position="1079,222" size="100,100">&lt;&lt;background &quot;intro/scene-2.mp4&quot; &quot;intro/scene-2.png&quot;&gt;&gt;
+&lt;&lt;cachevideo &quot;intro/scene-3.mp4&quot; &quot;intro/scene-3.png&quot;&gt;&gt;
 &lt;&lt;text-container&gt;&gt;
 Despite these efforts, some humans still become aware of the Ether and their connection to it. When they do, a Sporo awakens. 
 &lt;br /&gt;
@@ -168,12 +145,8 @@ Sporos awaken in a place known as Dimm City. This city is the center of an ongoi
   &lt;&lt;back &quot;back&quot;&gt;&gt;
   [[exit|Start]]
   [[continue|scene-3]]
-&lt;&lt;/toolbar&gt;&gt;
-&lt;video hidden&gt;
-  &lt;source src=&quot;scene-3.mp4&quot; type=&quot;video/mp4&quot;&gt;
-&lt;/video&gt;</tw-passagedata><tw-passagedata pid="4" name="scene-3" tags="pan-right dark" position="1015,376" size="100,100">&lt;video class=&quot;background pan-right&quot; autoplay loop muted disablePictureInPicture playsinline poster=&quot;/stories/intro/scene-3.png&quot;&gt;
-  &lt;source src=&quot;scene-3.mp4&quot; type=&quot;video/mp4&quot;&gt;
-&lt;/video&gt;
+&lt;&lt;/toolbar&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="scene-3" tags="pan-right dark" position="1015,376" size="100,100">&lt;&lt;background &quot;intro/scene-3.mp4&quot; &quot;intro/scene-3.png&quot;&gt;&gt;
+&lt;&lt;cachevideo &quot;intro/scene-4.mp4&quot; &quot;intro/scene-4.png&quot;&gt;&gt;
 &lt;&lt;text-container&gt;&gt;
   There are groups of the citizens that have started to amass great power and influence. These creatures have banded together and setup a stronghold within the walls of Dimm City under the direction of a leader known as Daemon.
 &lt;&lt;/text-container&gt;&gt;
@@ -181,17 +154,13 @@ Sporos awaken in a place known as Dimm City. This city is the center of an ongoi
   &lt;&lt;back &quot;back&quot;&gt;&gt;
   [[exit|Start]]
   [[continue|scene-4]]
-&lt;&lt;/toolbar&gt;&gt;
-&lt;video hidden&gt;
-  &lt;source src=&quot;scene-4.mp4&quot; type=&quot;video/mp4&quot;&gt;
-&lt;/video&gt;</tw-passagedata><tw-passagedata pid="5" name="scene-4" tags="pan-right fast dark" position="930,524" size="100,100">&lt;style&gt;
+&lt;&lt;/toolbar&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="scene-4" tags="pan-right fast dark" position="930,524" size="100,100">&lt;style&gt;
 :root{
 --story-animation-length: 0s;
 }
 &lt;/style&gt;
-&lt;video class=&quot;background&quot; autoplay loop muted disablePictureInPicture playsinline poster=&quot;/stories/intro/scene-4.png&quot;&gt;
-  &lt;source src=&quot;scene-4.mp4&quot; type=&quot;video/mp4&quot;&gt;
-&lt;/video&gt;
+&lt;&lt;background &quot;intro/scene-4.mp4&quot; &quot;intro/scene-4.png&quot;&gt;&gt;
+&lt;&lt;cachevideo &quot;intro/scene-5.mp4&quot; &quot;intro/scene-5.png&quot;&gt;&gt;
 &lt;&lt;text-container&gt;&gt;
 From this stronghold, they launch an insidious offensive to gain control of the city.  Using every tactic imaginable, from bribery to all out warfare, these creatures are determined to rule the dream world without restraint. They believe central control is the way and they will stop at nothing to achieve it! 
 &lt;&lt;/text-container&gt;&gt;
@@ -199,12 +168,8 @@ From this stronghold, they launch an insidious offensive to gain control of the 
   &lt;&lt;back &quot;back&quot;&gt;&gt;
   [[exit|Start]]
   [[continue|scene-5]]
-&lt;&lt;/toolbar&gt;&gt;
-&lt;video hidden&gt;
-  &lt;source src=&quot;scene-5.mp4&quot; type=&quot;video/mp4&quot;&gt;
-&lt;/video&gt;</tw-passagedata><tw-passagedata pid="6" name="scene-5" tags="zoom dark" position="761,643" size="100,100">&lt;video class=&quot;background&quot; autoplay loop muted disablePictureInPicture playsinline poster=&quot;/stories/intro/scene-5.png&quot;&gt;
-  &lt;source src=&quot;scene-5.mp4&quot; type=&quot;video/mp4&quot;&gt;
-&lt;/video&gt;
+&lt;&lt;/toolbar&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="scene-5" tags="zoom dark" position="761,643" size="100,100">&lt;&lt;background &quot;intro/scene-5.mp4&quot; &quot;intro/scene-5.png&quot;&gt;&gt;
+&lt;&lt;cachevideo &quot;intro/scene-6.mp4&quot; &quot;intro/scene-6.png&quot;&gt;&gt;
 &lt;&lt;text-container&gt;&gt;
 The citizens that reject this vision and stand against the attempts to centralize power are referred to as &quot;Decents&quot;. These are common folks that believe community is the way and will resist the attempts of Daemon to strip the everyday citizen of their freedoms. 
 &lt;&lt;/text-container&gt;&gt;
@@ -212,9 +177,8 @@ The citizens that reject this vision and stand against the attempts to centraliz
   &lt;&lt;back &quot;back&quot;&gt;&gt;
   [[exit|Start]]
   [[continue|scene-6]]
-&lt;&lt;/toolbar&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="scene-6" tags="zoom-in dark" position="559,735" size="100,100">&lt;video class=&quot;background&quot; autoplay loop muted disablePictureInPicture playsinline poster=&quot;/stories/intro/scene-2.png&quot;&gt;
-  &lt;source src=&quot;scene-2.mp4&quot; type=&quot;video/mp4&quot;&gt;
-&lt;/video&gt;
+&lt;&lt;/toolbar&gt;&gt;</tw-passagedata><tw-passagedata pid="7" name="scene-6" tags="zoom-in dark" position="559,735" size="100,100">&lt;&lt;background &quot;intro/scene-6.mp4&quot; &quot;intro/scene-6.png&quot;&gt;&gt;
+&lt;&lt;cachevideo &quot;intro/scene-7.mp4&quot; &quot;intro/scene-7.png&quot;&gt;&gt;
 &lt;&lt;text-container&gt;&gt;
 What are their intentions? What motives would drive Dameon&#39;s followers to this madness? Immortality, wealth, or any one of the many ugly traits that appear in the hearts of &quot;men&quot;? Could it be something more innocent and benign? Simple curiosity, exploration, or the quest for so called &quot;enlightenment?&quot;
 &lt;&lt;/text-container&gt;&gt;
@@ -225,37 +189,27 @@ What are their intentions? What motives would drive Dameon&#39;s followers to th
 &lt;&lt;/toolbar&gt;&gt;
 &lt;video hidden&gt;
   &lt;source src=&quot;scene-7.mp4&quot; type=&quot;video/mp4&quot;&gt;
-&lt;/video&gt;</tw-passagedata><tw-passagedata pid="8" name="scene-7" tags="pan-right bottom dark" position="316,760" size="100,100">&lt;video class=&quot;background pan-right&quot; autoplay loop muted disablePictureInPicture playsinline poster=&quot;/stories/intro/scene-7.png&quot;&gt;
-  &lt;source src=&quot;scene-7.mp4&quot; type=&quot;video/mp4&quot;&gt;
-&lt;/video&gt;
+&lt;/video&gt;</tw-passagedata><tw-passagedata pid="8" name="scene-7" tags="pan-right bottom dark" position="316,760" size="100,100">&lt;&lt;background &quot;intro/scene-7.mp4&quot; &quot;intro/scene-7.png&quot;&gt;&gt;
 &lt;&lt;text-container&gt;&gt;
 Well child, there is only one way to find out. I suggest you determine //your// intentions now and hold on to them as if they were the only thing keeping you alive. I can say with certainty that those with no intention, no integrity, no purpose will not last long within the walls of the city. 
 &lt;&lt;/text-container&gt;&gt;
 &lt;&lt;toolbar&gt;&gt;
   &lt;&lt;back &quot;back&quot;&gt;&gt;
   [[exit|Start]]
-&lt;&lt;/toolbar&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="StoryInit" tags="" position="107,157" size="100,100">
-&lt;&lt;set $dimmCityUrl to &quot;https://files.dimm.city/stories&quot;&gt;&gt;
-&lt;video hidden&gt;
-  &lt;source src=&quot;index.mp4&quot; type=&quot;video/mp4&quot;&gt;
-&lt;/video&gt;
-&lt;video hidden&gt;
-  &lt;source @src=&quot;$dimmCityUrl + &#39;/intro/scene-1.mp4&#39;&quot; type=&quot;video/mp4&quot;&gt;
-&lt;/video&gt;
-&lt;&lt;cacheaudio &quot;intro-theme&quot; &quot;intro-theme.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;scene-1&quot; &quot;scene-1.mp3&quot;&gt;&gt;
+&lt;&lt;/toolbar&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="StoryInit" tags="" position="107,157" size="100,100">&lt;&lt;cacheaudio &quot;intro-theme&quot; &quot;intro/intro-theme.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;scene-1&quot; &quot;intro/scene-1.mp3&quot;&gt;&gt;
 &lt;&lt;waitforaudio&gt;&gt;
 &lt;&lt;createaudiogroup &quot;:theme&quot;&gt;&gt;
 	&lt;&lt;track &quot;intro-theme&quot; &gt;&gt;
 &lt;&lt;/createaudiogroup&gt;&gt;
 &lt;&lt;masteraudio muteonhide&gt;&gt;
-&lt;&lt;cacheaudio &quot;scene-2&quot; &quot;scene-2.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;scene-3&quot; &quot;scene-3.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;scene-4&quot; &quot;scene-4.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;scene-5&quot; &quot;scene-5.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;scene-6&quot; &quot;scene-6.mp3&quot;&gt;&gt;
-&lt;&lt;cacheaudio &quot;scene-7&quot; &quot;scene-7.mp3&quot;&gt;&gt;
-</tw-passagedata><tw-passagedata pid="10" name="PassageHeader" tags="" position="99,305.5" size="100,100">&lt;&lt;set $p to passage()&gt;&gt;
+&lt;&lt;cacheaudio &quot;scene-2&quot; &quot;intro/scene-2.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;scene-3&quot; &quot;intro/scene-3.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;scene-4&quot; &quot;intro/scene-4.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;scene-5&quot; &quot;intro/scene-5.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;scene-6&quot; &quot;intro/scene-6.mp3&quot;&gt;&gt;
+&lt;&lt;cacheaudio &quot;scene-7&quot; &quot;intro/scene-7.mp3&quot;&gt;&gt;
+</tw-passagedata><tw-passagedata pid="10" name="PassageHeader" tags="" position="99,305" size="100,100">&lt;&lt;set $p to passage()&gt;&gt;
 &lt;&lt;audio &quot;:playing:not(:theme)&quot; stop&gt;&gt;
 &lt;&lt;if $p neq &quot;Start&quot;&gt;&gt;
   &lt;&lt;audio &quot;:theme&quot; play&gt;&gt;
