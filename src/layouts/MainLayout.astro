@@ -1,7 +1,7 @@
 ---
-
 import MenuPanel from "../components/MenuPanel.astro";
 let title = Astro.props.title;
+let activePanel = Astro.props.activePanel || "bottom";
 ---
 
 <!DOCTYPE html>
@@ -15,10 +15,10 @@ let title = Astro.props.title;
         <link rel="icon" type="image/x-icon" href="/assets/icons/acorn256.png" />
         <link rel="stylesheet" type="text/css" href={Astro.resolve("../styles/main.css")} />
         <link rel="stylesheet" type="text/css" href={Astro.resolve("../styles/main.mobile.css")} />
-        <slot name="styles"></slot>
+        <slot name="styles" />
     </head>
-    <body>
-        <div class="vertical-acordion bottom">
+    <body class={activePanel}>
+        <div class="vertical-acordion">
             <div class="top-panel">
                 <slot>404</slot>
             </div>
@@ -35,10 +35,10 @@ let title = Astro.props.title;
             </div>
             <div class="bottom-panel">
                 <MenuPanel header={title}>
-                    <slot name="menu"></slot>
+                    <slot name="menu" />
                 </MenuPanel>
             </div>
-            <slot name="scripts"></slot>
+            <slot name="scripts" />
         </div>
     </body>
 </html>

@@ -2,16 +2,16 @@
 import MainLayout from "../layouts/MainLayout.astro";
 import Menu from "../components/Menu.astro";
 import MenuItem from "../components/MenuItem.astro";
-let story = Astro.props.selectedStory || "/stories/none.html";
 ---
 
-<MainLayout title="Archive" activePanel="bottom">
+<MainLayout title="Sporos" activePanel="top">
     <div class="video-wrapper">
         <div
             class="iframe-wrapper"
             data-augmented-ui="bl-clip-inset br-clip-inset tl-2-clip-xy tr-2-clip-xy l-rect r-rect t-clip"
         >
-            <iframe id="story" src={story} onload="storyLoaded()" client:load></iframe>
+            
+Sporos
         </div>
         <div class="video-decoration-glow">
             <div
@@ -24,20 +24,9 @@ let story = Astro.props.selectedStory || "/stories/none.html";
     </div>
 
     <Menu slot="menu">
-        <MenuItem icon="bi bi-building" title="Welcome to Dimm City" action="selectStory('Introduction')">
+        <MenuItem icon="bi bi-search" title="Find all Sporos" action="">
             An introduction to the world of Dimm City where the Sporos live
         </MenuItem>
-        <MenuItem icon="bi bi-cpu-fill" title="Prologue - Scene 1">compiling...</MenuItem>
-        <MenuItem icon="bi bi-terminal" title="Prologue - Scene 2">generating...</MenuItem>
-        <MenuItem icon="bi bi-safe" title="Locked">identity unknown</MenuItem>
+        <MenuItem icon="bi search-heart" title="Find your Sporos"></MenuItem>        
     </Menu>
-    <script src={Astro.resolve("../scripts/index.ts")}></script>
-    <style>
-        iframe {
-            width: 100%;
-            height: 100%;
-            clip-path: inherit;
-            border: 0;
-        }
-    </style>
 </MainLayout>
