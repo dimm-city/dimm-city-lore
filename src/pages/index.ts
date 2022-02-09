@@ -6,3 +6,25 @@ document.addEventListener("story.selected", (e: CustomEvent) => {
         document.querySelector(".vertical-acordion").classList.add("bottom");
     }
 });
+
+function loadStory(story) {
+    if (!story) story = "none";
+    frames[0].location = `/stories/${story}.html`;
+}
+
+function selectStory(story) {
+    loadStory(story);
+    document.dispatchEvent(
+        new CustomEvent("story.selected", {
+            detail: story,
+        })
+    );
+}
+
+function exitStory() {
+    selectStory(null);
+}
+
+function storyLoaded() {
+    console.log("story loaded");
+}

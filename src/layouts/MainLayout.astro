@@ -1,4 +1,6 @@
 ---
+
+import MenuPanel from "../components/MenuPanel.astro";
 let title = Astro.props.title;
 ---
 
@@ -13,8 +15,30 @@ let title = Astro.props.title;
         <link rel="icon" type="image/x-icon" href="/assets/icons/acorn256.png" />
         <link rel="stylesheet" type="text/css" href={Astro.resolve("../styles/main.css")} />
         <link rel="stylesheet" type="text/css" href={Astro.resolve("../styles/main.mobile.css")} />
+        <slot name="styles"></slot>
     </head>
     <body>
-        <slot />
+        <div class="vertical-acordion bottom">
+            <div class="top-panel">
+                <slot>404</slot>
+            </div>
+            <div class="accordion-divider">
+                <div
+                    class="acordion-divider-decoration"
+                    aria-hidden="true"
+                    data-augmented-ui="tl-clip l-clip t-clip-x b-clip-x tr-clip r-clip bl-clip br-clip"
+                >
+                </div>
+                <button
+                    onclick="this.closest('.vertical-acordion').classList.toggle('bottom')"
+                    data-augmented-ui="all-triangle-up border"></button>
+            </div>
+            <div class="bottom-panel">
+                <MenuPanel header={title}>
+                    <slot name="menu"></slot>
+                </MenuPanel>
+            </div>
+            <slot name="scripts"></slot>
+        </div>
     </body>
 </html>

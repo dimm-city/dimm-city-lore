@@ -1,29 +1,43 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
-import Story from "../components/Story.astro";
-import MenuPanel from "../components/MenuPanel.astro";
-let selectedStory = Astro.props.selectedStory || "/stories/none.html";
+import Menu from "../components/Menu.astro";
+import MenuItem from "../components/MenuItem.astro";
+let story = Astro.props.selectedStory || "/stories/none.html";
 ---
 
 <MainLayout title="Archive">
-    <script src={Astro.resolve("index.ts")}></script>
-    <div class="vertical-acordion bottom">
-        <div class="top-panel">
-            <Story src={selectedStory} />
+    <div class="video-wrapper">
+        <div
+            class="iframe-wrapper"
+            data-augmented-ui="bl-clip-inset br-clip-inset tl-2-clip-xy tr-2-clip-xy l-rect r-rect t-clip"
+        >
+            <iframe id="story" src={story} onload="storyLoaded()" client:load></iframe>
         </div>
-        <div class="accordion-divider">
+        <div class="video-decoration-glow">
             <div
-                class="acordion-divider-decoration"
                 aria-hidden="true"
-                data-augmented-ui="tl-clip l-clip t-clip-x b-clip-x tr-clip r-clip bl-clip br-clip"
+                class="augmented-video-decoration"
+                data-augmented-ui="bl-clip-inset br-clip-inset tl-2-clip-xy tr-2-clip-xy l-rect r-rect t-clip"
             >
             </div>
-            <button
-                onclick="this.closest('.vertical-acordion').classList.toggle('bottom')"
-                data-augmented-ui="all-triangle-up border"></button>
-        </div>
-        <div class="bottom-panel">
-            <MenuPanel />
         </div>
     </div>
+
+    <Menu slot="menu">
+        <MenuItem icon="bi bi-building" title="Welcome to Dimm City" action="selectStory('Introduction')">
+            An introduction to the world of Dimm City where the Sporos live
+        </MenuItem>
+        <MenuItem icon="bi bi-cpu-fill" title="Prologue - Scene 1">compiling...</MenuItem>
+        <MenuItem icon="bi bi-terminal" title="Prologue - Scene 2">generating...</MenuItem>
+        <MenuItem icon="bi bi-safe" title="Locked">identity unknown</MenuItem>
+    </Menu>
+    <script src={Astro.resolve("index.ts")}></script>
+    <style>
+        iframe {
+            width: 100%;
+            height: 100%;
+            clip-path: inherit;
+            border: 0;
+        }
+    </style>
 </MainLayout>

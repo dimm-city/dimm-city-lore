@@ -1,0 +1,49 @@
+---
+---
+
+<div class="menu">
+    <div class="menu-items" data-augmented-ui-reset>
+        <slot />
+    </div>
+</div>
+
+<style>
+    .menu {
+        overflow-y: auto;
+        width: 100%;
+    }
+    .menu-items {
+        display: grid;
+        grid-gap: 3em;
+        max-width: 100%;
+        grid-template-columns: repeat(2, 1fr);
+        list-style: none;
+        overflow-y: auto;
+        scrollbar-width: none;
+    }
+    .menu::-webkit-scrollbar {
+        width: 0;
+        display: none;
+    }
+
+    @media (max-width: 768px) {
+        .menu {
+            margin: 0em 1.5em 0;
+        }
+        .menu-items {
+            grid-template-columns: repeat(1, 1fr);
+            grid-gap: 1em;
+            padding-top: 3em;
+        }
+    }
+    @media (max-width: 480px) {
+        .menu {
+            margin: 0em 1.5em 0;
+        }
+        .menu-items {
+            grid-template-columns: repeat(1, 1fr);
+            grid-gap: 0.8em;
+            padding-top: 3em;
+        }
+    }
+</style>
