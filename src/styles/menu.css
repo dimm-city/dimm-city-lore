@@ -1,0 +1,79 @@
+.menu {
+    overflow-y: auto;
+    width: 100%;
+}
+.menu-items {
+    display: grid;
+    grid-gap: 3em;
+    max-width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    list-style: none;
+    overflow-y: auto;
+    scrollbar-width: none;
+}
+.menu::-webkit-scrollbar {
+    width: 0;
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .menu {
+        margin: 0em 1.5em 0;
+    }
+    .menu-items {
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 1em;
+        padding-top: 3em;
+    }
+}
+@media (max-width: 480px) {
+    .menu {
+        margin: 0em 1.5em 0;
+    }
+    .menu-items {
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 0.8em;
+        padding-top: 3em;
+    }
+}
+
+.menu-item {
+    height: 8em;
+    cursor: pointer;
+    padding: 1em;
+    min-height: 20%;
+    font-size: 2.5vh;
+    color: white;
+    overflow: hidden;
+    opacity: 0.75;
+    text-shadow: 0 0 0.25vh black, 0 0 0.25vh black;
+    transition: all var(--quick-in);
+    --aug-clip-tl1: initial;
+    --aug-clip-tr1: initial;
+    --aug-clip-bl1: initial;
+    --aug-clip-br1: initial;
+    --aug-border: initial;
+    --aug-border-all: 0.25vh;
+    --aug-tl1: 1vh;
+    --aug-tr1: 2vh;
+    --aug-br1: 1vh;
+    --aug-bl1: 1vh;
+    --aug-border-bg: radial-gradient(circle at top left, var(--pink) 40px, transparent 50px),
+        radial-gradient(circle at top right, var(--blue) 20px, transparent 30px),
+        radial-gradient(circle at bottom right, var(--pink) 40px, transparent 50px),
+        radial-gradient(circle at bottom left, var(--blue) 20px, transparent 30px);
+
+    --aug-inlay: initial;
+    --aug-inlay-bg: #ffffff17;
+    background-color: transparent;
+}
+.menu-item:hover,
+.menu-item:focus {
+    --aug-border-all: 0.35vh;
+    background-color: #ffffff37;
+    opacity: 1;
+}
+
+.menu-item small {
+    font-size: 0.7em;
+}

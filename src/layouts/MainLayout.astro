@@ -1,5 +1,6 @@
 ---
 import MenuPanel from "../components/MenuPanel.astro";
+import ContentPane from "../components/ContentPane.astro";
 let title = Astro.props.title;
 let activePanel = Astro.props.activePanel || "bottom";
 ---
@@ -20,7 +21,25 @@ let activePanel = Astro.props.activePanel || "bottom";
     <body class={activePanel}>
         <div class="vertical-acordion">
             <div class="top-panel">
-                <slot>404</slot>
+            <ContentPane>
+            <slot>404</slot>
+            </ContentPane>
+                <!-- <div class="content-wrapper">
+                    <div
+                        class="iframe-wrapper"
+                        data-augmented-ui="bl-clip-inset br-clip-inset tl-2-clip-xy tr-2-clip-xy l-rect r-rect t-clip"
+                    >
+                        <slot>404</slot>
+                    </div>
+                    <div class="content-decoration-glow">
+                        <div
+                            aria-hidden="true"
+                            class="augmented-content-decoration"
+                            data-augmented-ui="bl-clip-inset br-clip-inset tl-2-clip-xy tr-2-clip-xy l-rect r-rect t-clip"
+                        >
+                        </div>
+                    </div>
+                </div> -->
             </div>
             <div class="accordion-divider">
                 <div
@@ -30,7 +49,7 @@ let activePanel = Astro.props.activePanel || "bottom";
                 >
                 </div>
                 <button
-                    onclick="this.closest('.vertical-acordion').classList.toggle('bottom')"
+                    onclick="document.body.classList.toggle('bottom')"
                     data-augmented-ui="all-triangle-up border"></button>
             </div>
             <div class="bottom-panel">

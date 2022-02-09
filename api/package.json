@@ -1,0 +1,22 @@
+{
+    "name": "api",
+    "version": "1.0.0",
+    "description": "",
+    "scripts": {
+        "start": "func start",
+        "test": "echo \"No tests yet...\""
+    },
+    "dependencies": {
+        "@azure/storage-blob": "^12.8.0",
+        "@truffle/hdwallet-provider": "^1.7.0",
+        "ethers": "^5.5.2",
+        "gray-matter": "^4.0.3",
+        "handlebars": "^4.7.7",
+        "markdown-it": "^12.3.2",
+        "node-cache": "^5.1.2",
+        "node-fetch": "^2.6.6",
+        "pify": "^5.0.0",
+        "truffle-contract": "^4.0.31",
+        "web3": "^1.6.1"
+    }
+}

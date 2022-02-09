@@ -1,0 +1,10 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import SporosMenu from "./SporosMenu.svelte";
+import SporosEditor from "./SporosEditor.svelte";
+---
+
+<MainLayout title="Sporos" activePanel="bottom">
+    <SporosEditor client:load/>
+    <SporosMenu slot="menu" title="Menu" client:only/>
+</MainLayout>

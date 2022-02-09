@@ -5,13 +5,6 @@
     .top-panel{
         height: calc(85vh - var(--divider-gap));
     }
-    .video-wrapper {
-        position: relative;
-        height:100%;
-        max-width: 90vw;
-        aspect-ratio: 3/4;
-        margin: 1em auto 0;
-    }
 
     .accordion-divider,
     .acordion-divider-decoration {
@@ -28,7 +21,6 @@
 }
 
 @media (max-width: 750px) {
-    .augmented-video-decoration,
     .acordion-divider-decoration {
         --aug-border-all: 0.25vh;
     }

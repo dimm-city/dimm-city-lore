@@ -1,37 +1,56 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import Menu from "../components/Menu.astro";
-import MenuItem from "../components/MenuItem.astro";
+import MenuItem from "../components/MenuItem.svelte";
 let story = Astro.props.selectedStory || "/stories/none.html";
 ---
 
 <MainLayout title="Archive" activePanel="bottom">
-    <div class="video-wrapper">
-        <div
-            class="iframe-wrapper"
-            data-augmented-ui="bl-clip-inset br-clip-inset tl-2-clip-xy tr-2-clip-xy l-rect r-rect t-clip"
-        >
-            <iframe id="story" src={story} onload="storyLoaded()" client:load></iframe>
-        </div>
-        <div class="video-decoration-glow">
-            <div
-                aria-hidden="true"
-                class="augmented-video-decoration"
-                data-augmented-ui="bl-clip-inset br-clip-inset tl-2-clip-xy tr-2-clip-xy l-rect r-rect t-clip"
-            >
-            </div>
-        </div>
-    </div>
+    <script lang="typescript">
+        document.addEventListener("story.selected", (e) => {
+            console.log("story.selected", e);
+            if (e.detail > "" && e.detail != "stories/none.html") {
+                document.querySelector("body").classList.remove("bottom");
+            } else {
+                document.querySelector("body").classList.add("bottom");
+            }
+        });
+
+        function loadStory(story) {
+            if (!story) story = "none";
+            frames[0].location = `/stories/${story}.html`;
+        }
+
+        function selectStory(story) {
+            loadStory(story);
+            document.dispatchEvent(
+                new CustomEvent("story.selected", {
+                    detail: story,
+                })
+            );
+        }
+
+        function exitStory() {
+            selectStory(null);
+        }
+
+        function storyLoaded() {
+            console.log("story loaded");
+        }
+    </script>
+    <iframe id="story" src={story} onload="storyLoaded()" client:load></iframe>
 
     <Menu slot="menu">
-        <MenuItem icon="bi bi-building" title="Welcome to Dimm City" action="selectStory('Introduction')">
-            An introduction to the world of Dimm City where the Sporos live
-        </MenuItem>
+        <div onclick="selectStory('Introduction')" client:load>
+            <MenuItem icon="bi bi-building" title="Welcome to Dimm City">
+                An introduction to the world of Dimm City where the Sporos live
+            </MenuItem>
+        </div>
         <MenuItem icon="bi bi-cpu-fill" title="Prologue - Scene 1">compiling...</MenuItem>
         <MenuItem icon="bi bi-terminal" title="Prologue - Scene 2">generating...</MenuItem>
         <MenuItem icon="bi bi-safe" title="Locked">identity unknown</MenuItem>
     </Menu>
-    <script src={Astro.resolve("../scripts/index.ts")}></script>
+
     <style>
         iframe {
             width: 100%;

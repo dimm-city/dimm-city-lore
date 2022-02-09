@@ -1,6 +1,8 @@
 {
   "include": ["src/**/*"],
   "compilerOptions": {
-    "moduleResolution": "node",    
+    "moduleResolution": "node",        
+  },
+  "buildOptions": {    
   }
 }

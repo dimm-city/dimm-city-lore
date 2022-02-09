@@ -1,0 +1,10 @@
+{
+    "description": "Currently in an Etheral state...",   
+    "attributes": [
+        {
+            "trait_type": "State",
+            "value": "Etheral"
+        }
+    ],
+    "compiler": "Daemon"
+  }
