@@ -7,7 +7,7 @@ let selectedMenu = Astro.props.header || "[missing]";
     <div class="left-header" data-augmented-ui="tl-clip l-clip" onclick="toggleMenu()" client:visible>
         {selectedMenu}
     </div>
-    <div class="right-header" data-augmented-ui="tr-clip r-clip" onclick="toggleMenu()" client:visible>Menu</div>
+    <div class="right-header" data-augmented-ui="tr-clip r-clip" onclick="toggleMenu()" client:visible></div>
     <div class="main-panel page" data-augmented-ui="tl-2-clip-x tr-2-clip-x">
         <div class="page-menu">
             <slot><MainMenu /></slot>
@@ -20,8 +20,8 @@ let selectedMenu = Astro.props.header || "[missing]";
 
 <script>
     async function toggleMenu() {
-        document.querySelector(".main-panel").classList.toggle("main");
-        document.querySelector(".main-panel").classList.toggle("page");
+        // document.querySelector(".main-panel").classList.toggle("main");
+        // document.querySelector(".main-panel").classList.toggle("page");
     }
 </script>
 
