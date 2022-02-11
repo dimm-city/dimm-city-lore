@@ -23,7 +23,7 @@
         );
 
         console.log(contract);
-        let total = await contract.totalSupply();
+        let total = 10; // await contract.totalSupply();
         let downloads = [];
         for (let index = 1; index <= total; index++) {
             sporos.push({
@@ -35,23 +35,25 @@
                     if (res.ok) {
                         const data = await res.json();
                         let i = sporos.findIndex((s) => s.id === data.id);
+                        console.log(data.id, "index", i);
                         sporos[i] = data;
                     }
                 })
             );
         }
+        await Promise.all(downloads);
+        return sporos;
     }
 
     async function searchSporos(query) {
-        await connect();
-        return [];
+        sporos = await connect();
+        console.log(sporos[57]);
+        sporos = [...sporos];
+        sporos[0].id = 777;
+        sporos[0].name = "tesing";
     }
 </script>
-<style>
-    a {
-        text-decoration: none;
-    }
-</style>
+
 <button on:click={searchSporos}>search</button>
 
 <div class="menu">
@@ -61,3 +63,9 @@
         {/each}
     </div>
 </div>
+
+<style>
+    a {
+        text-decoration: none;
+    }
+</style>

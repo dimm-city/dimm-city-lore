@@ -1,4 +1,4 @@
-//const { getCharacterMetadata } = require("../lib/CharacterData");
+const { getCharacterMetadata } = require("../lib/CharacterData");
 
 
 module.exports = async function (context, req) {
@@ -6,12 +6,9 @@ module.exports = async function (context, req) {
     const typeKey = context.bindingData.type;
     const id = context.bindingData.id;
     try {
-        //let output = await getCharacterMetadata(typeKey, releaseKey, id);
+        let output = await getCharacterMetadata(typeKey, releaseKey, id);
         context.res.set("content-type", "application/json");
-        context.res.body = {
-            id: id,
-            name: "test"
-        };
+        context.res.body = output;
     } catch (error) {
         if (error.message.indexOf("reverted: 404") > -1) {
             context.res = {

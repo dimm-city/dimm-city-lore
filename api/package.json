@@ -9,7 +9,7 @@
     "dependencies": {
         "@azure/storage-blob": "^12.8.0",
         "@truffle/hdwallet-provider": "^1.7.0",
-        "ethers": "^5.5.2",
+        "ethers": "^5.5.4",
         "gray-matter": "^4.0.3",
         "handlebars": "^4.7.7",
         "markdown-it": "^12.3.2",
