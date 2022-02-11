@@ -18,22 +18,20 @@
 
 @media (max-width: 768px) {
     .menu {
-        margin: 0em 1.5em 0;
+        margin:  0;
     }
     .menu-items {
         grid-template-columns: repeat(1, 1fr);
         grid-gap: 1em;
-        padding-top: 3em;
     }
 }
 @media (max-width: 480px) {
     .menu {
-        margin: 0em 1.5em 0;
+        margin:  0;
     }
     .menu-items {
         grid-template-columns: repeat(1, 1fr);
         grid-gap: 0.8em;
-        padding-top: 3em;
     }
 }
 
