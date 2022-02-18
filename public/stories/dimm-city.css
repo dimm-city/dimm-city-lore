@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Barlow|Tomorrow:400,700&display=swap");
 @import url("https://unpkg.com/augmented-ui@2/augmented-ui.min.css");
 @import url("https://fonts.googleapis.com/css?family=Droid+Sans+Mono");
+
 :root {
     --main-font-family: "Tomorrow", "Droid Sans Mono", "Comfortaa", cursive, Nunito, -apple-system, BlinkMacSystemFont,
         Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
@@ -59,6 +60,7 @@ body {
 #ui-bar {
     display: none;
 }
+
 #story {
     margin: auto;
     justify-content: center;
@@ -66,6 +68,7 @@ body {
     padding: 0;
     margin-left: unset !important;
 }
+
 /* #passages {
     border-radius: 3em;
     background-color: rgba(255, 255, 255, 0.135);
@@ -90,18 +93,20 @@ body {
     display: flex;
     height: 100%;
 }
+
 #passages {
     position: relative;
     width: 100%;
 }
+
 .passage {
     left: 0;
     position: relative;
     top: 0;
     transition: opacity 2s ease;
-    display: flex;
     height: 100%;
 }
+
 .passage-out {
     opacity: 0;
     position: absolute;
@@ -109,6 +114,7 @@ body {
 }
 
 /*End SugarCube Overrides*/
+
 .text-container {
     height: min-content;
     padding: 1.5em;
@@ -122,20 +128,25 @@ body {
     --aug-clip-tl1: initial;
     --aug-rect-br1: initial;
 }
+
 .fit .text-container {
     padding: 1em;
     width: fit-content;
 }
+
 .passage.dark .text-container {
     --aug-inlay-bg: #000000c7;
 }
+
 .bottom .text-container {
     align-self: end;
     margin-bottom: 4em;
 }
+
 .text-primary {
     color: var(--primary-accent) !important;
 }
+
 .text-highlight {
     color: var(--third-accent);
 }
@@ -156,6 +167,13 @@ a:active {
     text-decoration: none;
     color: var(--secondary-accent);
 }
+
+
+a[data-passage] {
+    display: block;
+    margin: 0.3em 0 0;
+}
+
 .background {
     width: 100vw;
     height: 100vh;
@@ -180,22 +198,23 @@ a:active {
     padding-bottom: 1em;
     padding-top: 1em;
     background: rgb(2, 0, 36);
-    background: linear-gradient(
-        0deg,
-        rgba(2, 0, 36, 1) 0%,
-        rgba(29, 5, 60, 0.8) 85%,
-        rgba(243, 0, 255, 0.3) 97%,
-        rgba(0, 0, 0, 0.5) 100%
-    );
+    background: linear-gradient(0deg,
+            rgba(2, 0, 36, 1) 0%,
+            rgba(29, 5, 60, 0.8) 85%,
+            rgba(243, 0, 255, 0.3) 97%,
+            rgba(0, 0, 0, 0.5) 100%);
 }
+
 .action-toolbar a {
     font-size: 1.5em;
     margin: 0 3em;
 }
+
 .action-toolbar a::before {
     content: "<";
     padding-right: 0.25em;
 }
+
 .action-toolbar a::after {
     content: ">";
     padding-left: 0.25em;
@@ -216,39 +235,49 @@ a:active {
         font-size: 1.1em;
         margin: 0 1em;
     }
+
     .action-toolbar a.next {
         font-size: 1.1em;
         margin: 0 1em;
         content: ">";
     }
+
     .action-toolbar a::before {
         content: "<";
         padding-right: 0.1em;
     }
+
     .action-toolbar a::after {
         content: ">";
         padding-left: 0.1em;
     }
 }
+
 :root {
     --story-animation-length: 10s;
 }
+
 .fast {
     --story-animation-length: 3s;
 }
+
 .slow {
     --story-animation-length: 35s;
 }
+
 .pan-right .background {
     animation: pan-right var(--story-animation-length) forwards;
 }
-.pan-left .background{
+
+.pan-left .background {
     animation: pan-left var(--story-animation-length) forwards;
 }
+
 .zoom .background,
 .zoom-in .background {
     animation: zoom-in var(--story-animation-length) forwards;
 }
+
 .zoom-out .background {
     animation: zoom-out var(--story-animation-length) forwards;
 }
@@ -258,65 +287,80 @@ a:active {
         opacity: 0;
         transform: scale3d(1, 1, 1);
     }
+
     5% {
         opacity: 1;
     }
+
     100% {
         transform: scale3d(1.15, 1.15, 1.15);
         opacity: 1;
     }
 }
+
 @keyframes zoom-out {
     0% {
         opacity: 0;
         transform: scale3d(1.2, 1.2, 1.2);
     }
+
     5% {
         opacity: 1;
     }
+
     100% {
         transform: scale3d(1, 1, 1);
         opacity: 1;
     }
 }
+
 @keyframes pan-right {
     0% {
         opacity: 0;
         transform: translate3d(3%, 0%, 0px) scale3d(1.05, 1.05, 1.05);
     }
+
     5% {
         opacity: 1;
     }
+
     100% {
         transform: scale3d(1.1, 1.1, 1.1) translate3d(-3%, 0%, 0px);
         opacity: 1;
     }
 }
+
 @keyframes pan-left {
     0% {
         opacity: 0;
         transform: translate3d(-3%, 0%, 0px) scale3d(1.05, 1.05, 1.05);
     }
+
     5% {
         opacity: 1;
     }
+
     100% {
         transform: scale3d(1.1, 1.1, 1.1) translate3d(3%, 0%, 0px);
         opacity: 1;
     }
 }
+
 @keyframes kenburns {
     0% {
         opacity: 0;
     }
+
     5% {
         opacity: 1;
     }
+
     95% {
         transform: scale3d(1.5, 1.5, 1.5) translate3d(-190px, -120px, 0px);
         animation-timing-function: ease-in;
         opacity: 1;
     }
+
     100% {
         transform: scale3d(2, 2, 2) translate3d(-170px, -100px, 0px);
         opacity: 0;

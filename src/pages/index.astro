@@ -46,8 +46,13 @@ let story = Astro.props.selectedStory || "/stories/none.html";
                 An introduction to the world of Dimm City where the Sporos live
             </MenuItem>
         </div>
-        <MenuItem icon="bi bi-cpu-fill" title="Prologue - Scene 1">compiling...</MenuItem>
+         <div onclick="selectStory('Prologue')" client:load>
+            <MenuItem icon="bi bi-cpu-fill" title="Prologue - Scene 1">compiling...</MenuItem>
+        </div>
         <MenuItem icon="bi bi-terminal" title="Prologue - Scene 2">generating...</MenuItem>
+         <div onclick="selectStory('Wake')" client:load>
+            <MenuItem icon="bi bi-eye" title="Wake">Can you find your way out of this dream?!</MenuItem>
+         </div>
         <MenuItem icon="bi bi-safe" title="Locked">identity unknown</MenuItem>
     </Menu>
 
