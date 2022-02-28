@@ -1,0 +1,9 @@
+{
+  abilities {
+    data {
+      attributes {
+        name
+      }
+    }
+  }
+}
