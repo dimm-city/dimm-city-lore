@@ -1,24 +1,33 @@
 ---
 import MainLayout from "../../layouts/MainLayout.astro";
 import Menu from "../../components/Menu.astro";
-import MenuItem from "../../components/MenuItem.svelte";
 import Character from "./Character.svelte";
+import CharacterMenu from "./CharacterMenu.svelte";
 ---
 
 <MainLayout title="Characters" activePanel="top">
   <style>
-    div {
-      background: white;
+    * {
+      padding: 0;
+      margin: 0;
+      border: 0;
+    }
+    .page-container {
+      background-color: #d1d1d1f2;
       height: 100%;
-      padding: 2em;
+      padding: 3rem;
       margin: auto;
+    }
+    div {
+      background: #000000ed;
+      height: 100%;
       overflow-y: auto;
     }
   </style>
-  <div>
-    <Character client:only id="1" />
+  <div class="page-container">
+    <Character client:only />
   </div>
   <Menu slot="menu" title="Menu" client:load>
-    <MenuItem />
+   <CharacterMenu client:only/>
   </Menu>
 </MainLayout>

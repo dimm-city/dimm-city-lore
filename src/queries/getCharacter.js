@@ -1,4 +1,4 @@
-export const getCharacterQuery =`
+export const getCharacterQuery = `
   query getCharacter($id: ID!) {
     character(id: $id) {
       data {
@@ -12,33 +12,36 @@ export const getCharacterQuery =`
           skin
           hair
           vibe
-          clothing
-          characterRoles {
-            data {
-              attributes {
-                name
-              }
-            }
-          }
+          clothing          
           race {
             data {
               attributes {
                 name
+                slug
+                abilities{
+                  data{
+                    attributes{
+                      name
+                      slug
+                    }
+                  }
+                }
               }
             }
-          }
-          selectedAbilities {
+          } 
+          roles {
             data {
-              id
               attributes {
                 name
+                slug
               }
             }
-          }
+          }         
           currentLocation {
             data {
               attributes {
                 name
+                slug
               }
             }
           }
@@ -46,9 +49,18 @@ export const getCharacterQuery =`
             data {
               attributes {
                 name
+                slug
               }
             }
           }
+          items {
+            data {
+              attributes {
+                name
+                slug
+              }
+            }
+          }       
         }
       }
     }
