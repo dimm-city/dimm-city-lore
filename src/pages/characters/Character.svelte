@@ -1,13 +1,12 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import { getCharacterQuery } from "../../queries/getCharacter.js";
+  import { config } from "../../config";
   let id = document ? document.location.hash.replace("#", "") : 0;
   let character;
-  //const url = "https://dimm-city-data.azurewebsites.net/graphql";
-  const url = "http://localhost:1337/graphql";
   let query = new Promise(() => {}); // loadCharacter();
   function loadCharacter() {
-    return fetch(url, {
+    return fetch(config.graphUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -17,22 +16,28 @@
         query: getCharacterQuery,
         variables: { id },
       }),
-    }).then(async (response) => {
-      if (response.ok) {
-        const json = await response.json();
-        console.log("data", json);
+    })
+      .then(async (response) => {
+        if (response.ok) {
+          const json = await response.json();
+          console.log("data", json);
 
-        character = json.data.character.data ? json.data.character.data.attributes : null;
-        return character;
-      }
-      return {};
-    });
+          character = json.data.character.data
+            ? json.data.character.data.attributes
+            : null;
+          return character;
+        }
+        return null;
+      })
+      .catch((reason) => {
+        console.log("loadCharacter failed", reason);
+      });
   }
 
   function hashChanged(e: HashChangeEvent) {
     id = e.newURL.split("#").at(1).replace("#", "");
-    console.log('hashchanged', id, e);
-    query = loadCharacter();
+    console.log("hashchanged", id, e);
+    if (id != null) query = loadCharacter();
   }
   onMount(() => {
     window.addEventListener("hashchange", hashChanged);
