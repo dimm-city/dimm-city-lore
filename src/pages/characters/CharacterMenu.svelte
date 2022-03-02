@@ -1,10 +1,10 @@
 <script>
   import MenuItem from "../../components/MenuItem.svelte";
   import { getCharactersQuery } from "../../queries/getCharacters";
+  import { config } from "../../config";
 
-  const url = "http://localhost:1337/graphql";
   function loadCharacters() {
-    return fetch(url, {
+    return fetch(config.graphUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
