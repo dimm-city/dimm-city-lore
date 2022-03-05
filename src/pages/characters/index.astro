@@ -6,28 +6,12 @@ import CharacterMenu from "./CharacterMenu.svelte";
 ---
 
 <MainLayout title="Characters" activePanel="bottom">
-  <style>
-    * {
-      padding: 0;
-      margin: 0;
-      border: 0;
-    }
-    .page-container {
-      background-color: #d1d1d1f2;
-      height: 100%;
-      padding: 3rem;
-      margin: auto;
-    }
-    div {
-      background: #000000ed;
-      height: 100%;
-      overflow-y: auto;
-    }
+  <style global>
+    @import './characters.css';
   </style>
-  <div class="page-container">
-    <Character client:only />
-  </div>
-  <Menu slot="menu" title="Menu" client:load>
-   <CharacterMenu client:only/>
+  <Character client:only />
+  <Menu slot="menu" title="Menu">
+    <CharacterMenu client:only />
   </Menu>
+
 </MainLayout>

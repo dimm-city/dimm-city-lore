@@ -12,7 +12,16 @@ export const getCharacterQuery = `
           skin
           hair
           vibe
-          clothing          
+          clothing
+          cybernetics{
+            data{
+              id
+              attributes{
+                name
+                slug
+              }
+            }
+          }
           race {
             data {
               attributes {

@@ -10,10 +10,3 @@
         <small><slot /></small>
     </div>
 </a>
-
-<style>
-    a {
-        text-decoration: none;
-    }
-
-</style>

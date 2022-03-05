@@ -14,14 +14,12 @@ let title = Astro.props.title;
     />
     <title>{title} - Dimm City</title>
     <link rel="icon" type="image/x-icon" href="/assets/icons/acorn256.png" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href={Astro.resolve("../styles/print.css")}
-    />
+    <style global>
+      @import "../styles/print.css";
+    </style>
     <slot name="styles" />
   </head>
   <body>
-      <slot>404</slot>
+    <slot>404</slot>
   </body>
 </html>

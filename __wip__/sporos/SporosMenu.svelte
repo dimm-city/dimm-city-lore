@@ -47,11 +47,6 @@
         return [];
     }
 </script>
-<style>
-    a {
-        text-decoration: none;
-    }
-</style>
 <button on:click={searchSporos}>search</button>
 
 <div class="menu">

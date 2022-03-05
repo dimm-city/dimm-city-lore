@@ -20,6 +20,9 @@ html {
     background: url(/assets/bg/bg-04.jpg) center center / cover no-repeat,
         linear-gradient(to bottom left, #3c1b49, #3d0a33);
 }
+a {
+    text-decoration: none;
+}
 
 .vertical-acordion {
     position: absolute;

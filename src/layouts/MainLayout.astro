@@ -7,24 +7,28 @@ let activePanel = Astro.props.activePanel || "bottom";
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=false"
-        />
-        <title>{title} - Dimm City</title>
-        <link rel="icon" type="image/x-icon" href="/assets/icons/acorn256.png" />
-        <link rel="stylesheet" type="text/css" href={Astro.resolve("../styles/main.css")} />
-        <link rel="stylesheet" type="text/css" href={Astro.resolve("../styles/main.mobile.css")} />
-        <slot name="styles" />
-    </head>
-    <body class={activePanel}>
-        <div class="vertical-acordion">
-            <div class="top-panel">
-            <ContentPane>
-            <slot>404</slot>
-            </ContentPane>
-                <!-- <div class="content-wrapper">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=false"
+    />
+    <title>{title} - Dimm City</title>
+    <link rel="icon" type="image/x-icon" href="/assets/icons/acorn256.png" />
+    <style global>
+      @import "../styles/main.css";
+      @import "../styles/main.mobile.css";      
+    </style>
+    <slot name="styles" />
+  </head>
+  <body class={activePanel}>
+    <div class="vertical-acordion">
+      <div class="top-panel">
+        <ContentPane>
+          <slot>404</slot>
+        </ContentPane>
+        <!-- <div class="content-wrapper">
                     <div
                         class="iframe-wrapper"
                         data-augmented-ui="bl-clip-inset br-clip-inset tl-2-clip-xy tr-2-clip-xy l-rect r-rect t-clip"
@@ -40,24 +44,24 @@ let activePanel = Astro.props.activePanel || "bottom";
                         </div>
                     </div>
                 </div> -->
-            </div>
-            <div class="accordion-divider">
-                <div
-                    class="acordion-divider-decoration"
-                    aria-hidden="true"
-                    data-augmented-ui="tl-clip l-clip t-clip-x b-clip-x tr-clip r-clip bl-clip br-clip"
-                >
-                </div>
-                <button
-                    onclick="document.body.classList.toggle('bottom')"
-                    data-augmented-ui="all-triangle-up border"></button>
-            </div>
-            <div class="bottom-panel">
-                <MenuPanel header={title}>
-                    <slot name="menu" />
-                </MenuPanel>
-            </div>
-            <slot name="scripts" />
+      </div>
+      <div class="accordion-divider">
+        <div
+          class="acordion-divider-decoration"
+          aria-hidden="true"
+          data-augmented-ui="tl-clip l-clip t-clip-x b-clip-x tr-clip r-clip bl-clip br-clip"
+        >
         </div>
-    </body>
+        <button
+          onclick="document.body.classList.toggle('bottom')"
+          data-augmented-ui="all-triangle-up border"></button>
+      </div>
+      <div class="bottom-panel">
+        <MenuPanel header={title}>
+          <slot name="menu" />
+        </MenuPanel>
+      </div>
+      <slot name="scripts" />
+    </div>
+  </body>
 </html>
