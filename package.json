@@ -10,12 +10,12 @@
         "format": "prettier -w ."
     },
     "devDependencies": {
-        "@astrojs/renderer-svelte": "^0.3.1",
-        "astro": "^0.22.17",
-        "prettier-plugin-astro": "^0.0.12",
-        "postcss-load-config": "^3.1.1"
+        "postcss-load-config": "^3.1.1",
+        "prettier-plugin-astro": "^0.0.12"
     },
     "dependencies": {
+        "@astrojs/renderer-svelte": "^0.5.1",
+        "astro": "^0.23.7",
         "augmented-ui": "^2.0.0",
         "ethers": "^5.5.4",
         "svelte-ethers-store": "^0.6.4"

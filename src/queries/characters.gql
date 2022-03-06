@@ -1,0 +1,25 @@
+query {
+  characters(filters: { name: { eq: "T. J." } }) {
+    data {
+      attributes {
+        name
+        height
+        clothing
+        currentLocation {
+          data {
+            attributes {
+              name
+            }
+          }
+        }
+        selectedAbilities {
+          data {
+            attributes {
+              name
+            }
+          }
+        }
+      }
+    }
+  }
+}

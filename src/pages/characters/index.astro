@@ -1,0 +1,32 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import Menu from "../../components/Menu.astro";
+import Character from "./Character.svelte";
+import CharacterMenu from "./CharacterMenu.svelte";
+import "./characters.css";
+---
+
+<MainLayout title="Characters" activePanel="bottom" fullsize={true}>
+  <style gobal>
+    .page-container {
+      background-color: #000000ed;
+      height: 100%;
+      padding: 2rem;
+      margin: auto;
+      overflow-y: auto;
+    }
+    .page-container > div {
+      background: #d1d1d1f2;
+      min-height: 100%;
+      border-radius: 0.5em;
+    }
+  </style>
+  <div class="page-container">
+    <div>
+      <Character client:only />
+    </div>
+  </div>
+  <Menu slot="menu" title="Menu">
+    <CharacterMenu client:only />
+  </Menu>
+</MainLayout>
