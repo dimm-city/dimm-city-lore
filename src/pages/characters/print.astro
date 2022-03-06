@@ -1,7 +1,6 @@
 ---
 import Character from "./Character.svelte";
-import './characters.css';
-import "../../styles/print.css"
+import "./print.css";
 ---
 
 <!DOCTYPE html>
@@ -17,6 +16,6 @@ import "../../styles/print.css"
     <link rel="icon" type="image/x-icon" href="/assets/icons/acorn256.png" />
   </head>
   <body>
-    <Character client:only></Character>
+    <Character client:only />
   </body>
 </html>

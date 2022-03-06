@@ -30,6 +30,9 @@
 .text-primary {
     color: var(--primary-accent) !important;
 }
+.text-secondary {
+    color: var(--secondary-accent) !important;
+}
 .text-highlight {
     color: var(--third-accent);
 }

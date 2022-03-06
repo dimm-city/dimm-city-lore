@@ -64,28 +64,24 @@
   });
 </script>
 
-<div class="page-container">
-  <div>
+
     <div class="title-container">
       <div>
         <h1>Dimm City</h1>
         <h5>Character Sheet</h5>
-      </div>
+      </div>  
     </div>
     {#await query}
       Loading...
     {:then}
       {#if character != null}
-        <small
-          ><a target="_blank" href="/characters/print/#{character.tokenId}"
-            >print {character.tokenId}</a
-          ></small>
+      
         <div class="parent">
           <div class="container">
             <div>Name:{character.name}</div>
             <div class="stats">
-              <h4>HP: {character.hp || 10}</h4>
-              <h4>AP: {character.ap || 10}</h4>
+              <h4>HP: <span class="points-block">{character.hp || 10}</span></h4>
+              <h4>AP: <span class="points-block">{character.ap || 10}</span></h4>
             </div>
             <div class="details">
               <div>Pronouns: {character.pronouns || "they/them"}</div>
@@ -154,5 +150,3 @@
         </div>
       {/if}
     {/await}
-  </div>
-</div>

@@ -1,18 +1,24 @@
 @import url("https://fonts.googleapis.com/css?family=Tomorrow:400,700&display=swap");
 @import url("./variables.css");
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html,
 body {
-    min-height: 100%;
-    overflow: hidden;
-    font-family: var(--main-font-family);
+  min-height: 100%;
+  overflow: hidden;
+  font-family: var(--main-font-family);
 }
 
 html {
-    background: none;
+  background: none;
+}
+
+@media print {
+  .hide-print {
+    display: none;
+  }
 }

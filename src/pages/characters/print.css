@@ -1,0 +1,14 @@
+@import url("../../styles/print.css");
+@import url("./characters.css");
+
+@page {
+  margin: 3mm;
+}
+
+.container {
+  grid-template-rows: 0.1fr 0.2fr minmax(250px, 0.2fr) minmax(200px, 0.9fr) 0.9fr;
+}
+
+.hide-print {
+  display: none;
+}
