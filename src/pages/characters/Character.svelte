@@ -3,8 +3,11 @@
   import { getCharacterQuery } from "../../queries/getCharacter.js";
   import { config } from "../../config";
   let id = document ? document.location.hash.replace("#", "") : 0;
+
   let character;
+
   let query = new Promise(() => {}); // loadCharacter();
+
   function loadCharacter() {
     return fetch(config.graphUrl, {
       method: "POST",
@@ -20,11 +23,12 @@
       .then(async (response) => {
         if (response.ok) {
           const json = await response.json();
-          console.log("data", json);
+          console.log("data", id, json);
 
           character = json.data.character.data
             ? json.data.character.data.attributes
             : null;
+
           return character;
         }
         return null;
@@ -39,12 +43,20 @@
     console.log("hashchanged", id, e);
     if (id != null) query = loadCharacter();
   }
+
+  const wrapper = document.getElementsByClassName("content-wrapper");
+
   onMount(() => {
     window.addEventListener("hashchange", hashChanged);
-    document
-      .getElementsByClassName("content-wrapper")
-      .item(0)
-      .classList.add("full-size");
+
+   // wrapper.item(0).classList.add("full-size");
+
+    if (window.location.hash.length > 1)
+      hashChanged(
+        new HashChangeEvent("hashchanged", {
+          newURL: window.location.hash,
+        })
+      );
 
     return () => {
       window.removeEventListener("hashchange", hashChanged);
@@ -64,6 +76,10 @@
       Loading...
     {:then}
       {#if character != null}
+        <small
+          ><a target="_blank" href="/characters/print/#{character.tokenId}"
+            >print {character.tokenId}</a
+          ></small>
         <div class="parent">
           <div class="container">
             <div>Name:{character.name}</div>

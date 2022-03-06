@@ -3,12 +3,11 @@ import MainLayout from "../../layouts/MainLayout.astro";
 import Menu from "../../components/Menu.astro";
 import Character from "./Character.svelte";
 import CharacterMenu from "./CharacterMenu.svelte";
+import './characters.css';
 ---
 
-<MainLayout title="Characters" activePanel="bottom">
-  <style global>
-    @import './characters.css';
-  </style>
+<MainLayout title="Characters" activePanel="bottom" fullsize={true}>
+  
   <Character client:only />
   <Menu slot="menu" title="Menu">
     <CharacterMenu client:only />

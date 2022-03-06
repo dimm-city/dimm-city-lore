@@ -1,4 +1,10 @@
-<div class="content-wrapper">
+---
+let fullsize = Astro.props.fullsize
+  ? "content-wrapper full-size"
+  : "content-wrapper";
+---
+
+<div class={fullsize}>
   <div
     class="iframe-wrapper"
     data-augmented-ui="bl-clip-inset br-clip-inset tl-2-clip-xy tr-2-clip-xy l-rect r-rect t-clip"

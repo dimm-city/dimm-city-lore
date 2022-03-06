@@ -1,8 +1,10 @@
 export const getCharacterQuery = `
   query getCharacter($id: ID!) {
-    character(id: $id) {
+    character(id: $id) {      
       data {
+        id
         attributes {
+          tokenId
           name
           age
           height
@@ -13,6 +15,14 @@ export const getCharacterQuery = `
           hair
           vibe
           clothing
+          mainImage{
+            data{
+              attributes{
+                url
+                previewUrl
+              }
+            }
+          }
           cybernetics{
             data{
               id

@@ -1,8 +1,22 @@
 ---
-import PrintLayout from "../../layouts/PrintLayout.astro";
 import Character from "./Character.svelte";
+import './characters.css';
+import "../../styles/print.css"
 ---
 
-<PrintLayout>
-  <Character client:only />
-</PrintLayout>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=false"
+    />
+    <title>Print Sheet - Dimm City</title>
+    <link rel="icon" type="image/x-icon" href="/assets/icons/acorn256.png" />
+  </head>
+  <body>
+    <Character client:only></Character>
+  </body>
+</html>
